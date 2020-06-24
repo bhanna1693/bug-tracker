@@ -1,10 +1,10 @@
 package com.bhanna.bugtracker.auth;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 public class LoginController {
     private final LoginService loginService;
 
@@ -13,11 +13,7 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public String handleLogin(@RequestParam String username, @RequestParam String password) {
-        if (loginService.authenticate(username, password)) {
-            return "redirect:/";
-        }
-
-        return "login";
+    public Boolean handleLogin(@RequestParam String username, @RequestParam String password) {
+        return loginService.authenticate(username, password);
     }
 }
