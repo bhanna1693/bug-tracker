@@ -2,6 +2,8 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {TopNavComponent} from './top-nav/top-nav.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
+import {RouterModule} from "@angular/router";
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
@@ -11,7 +13,9 @@ import {MatToolbarModule} from "@angular/material/toolbar";
   ],
   imports: [
     CommonModule,
-    MatToolbarModule
+    MatToolbarModule,
+    RouterModule,
+    MatButtonModule
   ]
 })
 export class NavModule {
