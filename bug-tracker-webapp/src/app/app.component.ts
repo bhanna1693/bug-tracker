@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {environment} from "../environments/environment";
+import {Component, OnInit} from '@angular/core';
+import {AppService} from "./services/app.service";
 
 @Component({
   selector: 'app-root',
@@ -9,12 +8,15 @@ import {environment} from "../environments/environment";
 })
 export class AppComponent implements OnInit {
   title = 'webapp';
-  notes = this.http.get(environment.API_BASE_URL + '/employees/1');
 
-  constructor(private http: HttpClient) {
+  constructor(private appService: AppService) {
   }
 
   ngOnInit() {
+    this.authenticate();
+  }
 
+  authenticate() {
+    this.appService.authenticate(undefined, undefined);
   }
 }
