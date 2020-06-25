@@ -17,6 +17,9 @@ export class LoginComponent implements OnInit {
               private router: Router) {
   }
 
+  ngOnInit() {
+  }
+
   login() {
     this.app.authenticate(this.credentials, () => {
       this.router.navigateByUrl('/');
