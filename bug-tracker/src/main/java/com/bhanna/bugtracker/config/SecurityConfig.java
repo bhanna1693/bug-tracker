@@ -18,11 +18,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public SecurityConfig(DataSource dataSource) {
         this.dataSource = dataSource;
     }
-//
-//    @Bean
-//    public BCryptPasswordEncoder bCryptPasswordEncoder() {
-//        return new BCryptPasswordEncoder();
-//    }
+
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
