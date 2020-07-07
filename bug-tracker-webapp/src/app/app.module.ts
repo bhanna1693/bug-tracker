@@ -7,8 +7,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NavModule} from "./nav/nav.module";
 import {HomeComponent} from "./home/home.component";
 import {HttpClientModule} from "@angular/common/http";
-import { LoginComponent } from './login/login.component';
-import {FormsModule} from "@angular/forms";
+import {LoginComponent} from './login/login.component';
+import {ReactiveFormsModule} from "@angular/forms";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
@@ -26,11 +26,11 @@ import {MatIconModule} from "@angular/material/icon";
     BrowserAnimationsModule,
     HttpClientModule,
     NavModule,
-    FormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
     MatIconModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

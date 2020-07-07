@@ -9,24 +9,25 @@ import {Router} from "@angular/router";
 })
 export class AppService {
   authenticated: boolean;
+  employee: any;
 
   constructor(private http: HttpClient,
               private router: Router) {
   }
 
-  authenticate(credentials, callback) {
+  authenticate(credentials: { username: string, password: string }, callback) {
     const headers = new HttpHeaders(credentials ? {
-      authorization : 'Basic ' + btoa(credentials.username + ':' + credentials.password)
+      authorization: 'Basic ' + btoa(credentials.username + ':' + credentials.password)
     } : {});
 
-    this.http.get('user', {headers: headers}).subscribe(response => {
-      if (response['name']) {
-        this.authenticated = true;
-      } else {
-        this.authenticated = false;
-      }
-      return callback && callback();
-    });
+    //TODO: replace request with profile for user
+    this.http.get(environment.API_BASE_URL + '/employees/1', {headers: headers})
+      .subscribe(response => {
+        // if response successful, set authenticate to true and execute callback()
+        this.employee = response;
+        this.authenticated = !!response['firstName'];
+        return callback && callback();
+      });
   }
 
   logout() {

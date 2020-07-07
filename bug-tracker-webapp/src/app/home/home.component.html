@@ -1,8 +1,7 @@
 <h1>Greeting</h1>
-<div [hidden]="!authenticated()">
-  <p>The ID is {{greeting.id}}</p>
-  <p>The content is {{greeting.content}}</p>
+<div [hidden]="!app.authenticated">
+  {{app.employee | json}}
 </div>
-<div [hidden]="authenticated()">
+<div [hidden]="app.authenticated">
   <p>Login to see your greeting</p>
 </div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AppService} from "../services/app.service";
-import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-login',
@@ -9,11 +9,13 @@ import {Router} from "@angular/router";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  credentials = {username: '', password: ''};
+  credentials: FormGroup = new FormGroup({
+    username: new FormControl(null),
+    password: new FormControl(null)
+  });
   error = false;
 
   constructor(private app: AppService,
-              private http: HttpClient,
               private router: Router) {
   }
 
@@ -21,7 +23,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.app.authenticate(this.credentials, () => {
+    this.app.authenticate(this.credentials.value, () => {
       this.router.navigateByUrl('/');
     });
     return false;
