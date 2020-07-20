@@ -1,1 +1,12 @@
-<p>todo-page works!</p>
+<div class="container">
+  <h1>{{projectType}}</h1>
+
+  <mat-tab-group>
+    <mat-tab [label]="'Your ' + projectType">
+      <app-todo-list [todoLists]="todoLists"></app-todo-list>
+    </mat-tab>
+    <mat-tab [label]="'Starred ' + projectType">
+      <app-todo-list [todoLists]="todoLists"></app-todo-list>
+    </mat-tab>
+  </mat-tab-group>
+</div>
