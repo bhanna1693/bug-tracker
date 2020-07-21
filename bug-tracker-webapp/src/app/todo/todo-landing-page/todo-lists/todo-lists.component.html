@@ -1,9 +1,9 @@
 <mat-nav-list>
-  <mat-list-item *ngFor="let list of todoLists" [routerLink]="['todo', list.id]">
+  <a mat-list-item *ngFor="let list of todoLists" [routerLink]="['/todo', list.id]">
     <mat-icon matListIcon>list</mat-icon>
     <h3 matLine> {{list.title}} </h3>
     <p matLine>
       <span> {{list.description}} </span>
     </p>
-  </mat-list-item>
+  </a>
 </mat-nav-list>

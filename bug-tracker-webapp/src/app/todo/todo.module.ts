@@ -1,27 +1,34 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { TodoRoutingModule } from './todo-routing.module';
-import {TodoPageComponent} from "./todo-page/todo-page.component";
+import {TodoRoutingModule} from './todo-routing.module';
 import {MatTabsModule} from "@angular/material/tabs";
-import { TodoListComponent } from './todo-page/todo-list/todo-list.component';
 import {MatListModule} from "@angular/material/list";
 import {MatIconModule} from "@angular/material/icon";
-import { TodoByIdPageComponent } from './todo-by-id-page/todo-by-id-page.component';
+import {TodoLandingPageComponent} from './todo-landing-page/todo-landing-page.component';
+import {TodoListsComponent} from './todo-landing-page/todo-lists/todo-lists.component';
+import { TodoListPageComponent } from './todo-list-page/todo-list-page.component';
+import { TodoListComponent } from './todo-list-page/todo-list/todo-list.component';
+import { TodoDetailComponent } from './todo-list-page/todo-detail/todo-detail.component';
+import {MatCheckboxModule} from "@angular/material/checkbox";
 
 
 @NgModule({
   declarations: [
-    TodoPageComponent,
+    TodoLandingPageComponent,
+    TodoListsComponent,
+    TodoListPageComponent,
     TodoListComponent,
-    TodoByIdPageComponent
+    TodoDetailComponent
   ],
   imports: [
     CommonModule,
     TodoRoutingModule,
     MatTabsModule,
     MatListModule,
-    MatIconModule
+    MatIconModule,
+    MatCheckboxModule
   ]
 })
-export class TodoModule { }
+export class TodoModule {
+}

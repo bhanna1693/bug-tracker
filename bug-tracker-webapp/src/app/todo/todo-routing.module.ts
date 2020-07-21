@@ -1,17 +1,29 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {TodoPageComponent} from "./todo-page/todo-page.component";
-import {TodoByIdPageComponent} from "./todo-by-id-page/todo-by-id-page.component";
+import {TodoLandingPageComponent} from "./todo-landing-page/todo-landing-page.component";
+import {TodoListPageComponent} from "./todo-list-page/todo-list-page.component";
+import {TodoListComponent} from "./todo-list-page/todo-list/todo-list.component";
+import {TodoDetailComponent} from "./todo-list-page/todo-detail/todo-detail.component";
 
 
 const routes: Routes = [
   {
     path: '',
-    component: TodoPageComponent
+    component: TodoLandingPageComponent
   },
   {
-    path: ':id',
-    component: TodoByIdPageComponent
+    path: ':listId',
+    component: TodoListPageComponent,
+    children: [
+      {
+        path: '',
+        component: TodoListComponent
+      },
+      {
+        path: ':todoId',
+        component: TodoDetailComponent
+      }
+    ]
   }
 ];
 
