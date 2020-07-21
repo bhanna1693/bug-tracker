@@ -5,6 +5,8 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {RouterModule} from "@angular/router";
 import {MatButtonModule} from "@angular/material/button";
 import { SideNavComponent } from './side-nav/side-nav.component';
+import {MatListModule} from "@angular/material/list";
+import {MatIconModule} from "@angular/material/icon";
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { SideNavComponent } from './side-nav/side-nav.component';
     CommonModule,
     MatToolbarModule,
     RouterModule,
-    MatButtonModule
+    MatButtonModule,
+    MatListModule,
+    MatIconModule
   ]
 })
 export class NavModule {
