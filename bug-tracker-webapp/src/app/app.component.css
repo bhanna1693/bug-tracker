@@ -1,0 +1,38 @@
+/*!**/
+/* * Actual Sticky Footer Styles*/
+/* *!*/
+/*.all-wrap {*/
+/*  min-height: 100vh;*/
+/*}*/
+
+/*.page-wrap {*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  min-height: 100vh;*/
+/*}*/
+
+/*.content {*/
+/*  flex: 1;*/
+/*}*/
+
+/*app-top-nav {*/
+/*  position: sticky;*/
+/*  position: -webkit-sticky; !* For macOS/iOS Safari *!*/
+/*  top: 0; !* Sets the sticky toolbar to be on top *!*/
+/*  z-index: 1000; !* Ensure that your app's content doesn't overlap the toolbar *!*/
+/*}*/
+
+/*mat-sidenav {*/
+/*  width: 20rem;*/
+/*}*/
+
+/*@media print {*/
+/*  app-top-nav, app-side-nav, app-footer, mat-sidenav {*/
+/*    display: none;*/
+/*  }*/
+
+/*  mat-sidenav-container {*/
+/*    background: white;*/
+/*    overflow: inherit !important;*/
+/*  }*/
+/*}*/
