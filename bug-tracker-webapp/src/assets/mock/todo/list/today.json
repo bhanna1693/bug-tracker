@@ -1,0 +1,17 @@
+{
+  "listId": "1",
+  "items": [
+    {
+      "title": "Title of todo list item",
+      "description": "quick description of list item",
+      "id": "123",
+      "orderNo": 0
+    },
+    {
+      "title": "Another Title of todo list item",
+      "description": "another quick description of list item",
+      "id": "456",
+      "orderNo": 1
+    }
+  ]
+}
