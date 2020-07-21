@@ -13,4 +13,9 @@ export class TodoListItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  toggleCompleted() {
+    // toggle completed status
+    this.listItem.completed = !this.listItem.completed;
+  }
+
 }

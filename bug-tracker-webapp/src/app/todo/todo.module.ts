@@ -5,6 +5,9 @@ import {TodoRoutingModule} from './todo-routing.module';
 import {TodoLandingPageComponent} from './todo-landing-page/todo-landing-page.component';
 import { TodoListComponent } from './todo-landing-page/todo-list/todo-list.component';
 import { TodoListItemComponent } from './todo-landing-page/todo-list/todo-list-item/todo-list-item.component';
+import {MatIconModule} from "@angular/material/icon";
+import {MatButtonModule} from "@angular/material/button";
+import {MatDividerModule} from "@angular/material/divider";
 
 
 @NgModule({
@@ -15,7 +18,10 @@ import { TodoListItemComponent } from './todo-landing-page/todo-list/todo-list-i
   ],
   imports: [
     CommonModule,
-    TodoRoutingModule
+    TodoRoutingModule,
+    MatIconModule,
+    MatButtonModule,
+    MatDividerModule
   ]
 })
 export class TodoModule {

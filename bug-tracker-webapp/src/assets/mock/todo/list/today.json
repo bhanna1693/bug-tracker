@@ -3,15 +3,27 @@
   "items": [
     {
       "title": "Title of todo list item",
-      "description": "quick description of list item",
+      "comments": [
+        {
+          "comment": "comment #1 for list item",
+          "id": "1"
+        },
+        {
+          "comment": "comment #2 ",
+          "id": "2"
+        }
+      ],
+      "subTasks": [],
       "id": "123",
-      "orderNo": 0
+      "orderNo": 0,
+      "completed": false
     },
     {
       "title": "Another Title of todo list item",
-      "description": "another quick description of list item",
+      "comments": [],
       "id": "456",
-      "orderNo": 1
+      "orderNo": 1,
+      "completed": true
     }
   ]
 }

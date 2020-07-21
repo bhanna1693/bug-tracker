@@ -1,1 +1,14 @@
-<p>todo-list-item works!</p>
+<div class="d-flex">
+  <button mat-icon-button>
+    <mat-icon>drag_indicator</mat-icon>
+  </button>
+  <button mat-icon-button (click)="toggleCompleted()" color="accent">
+    <mat-icon>{{listItem.completed ? 'check_circle' : 'radio_button_unchecked'}}</mat-icon>
+  </button>
+
+  <div class="d-flex flex-column">
+    <h3 class="m-0">{{listItem.title}}</h3>
+  </div>
+</div>
+
+<mat-divider class="my-3"></mat-divider>
