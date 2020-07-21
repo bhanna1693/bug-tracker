@@ -10,12 +10,10 @@ export class SideNavComponent implements OnInit {
     {
       title: 'Today',
       icon: 'today',
-      link: '/today'
     },
     {
       title: 'Scheduled',
       icon: 'schedule',
-      link: '/scheduled'
     }
   ]
   constructor() { }

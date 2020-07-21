@@ -1,9 +1,0 @@
-<mat-nav-list>
-  <a mat-list-item *ngFor="let list of todoLists" [routerLink]="['/todo', list.id]">
-    <mat-icon matListIcon>list</mat-icon>
-    <h3 matLine> {{list.title}} </h3>
-    <p matLine>
-      <span> {{list.description}} </span>
-    </p>
-  </a>
-</mat-nav-list>

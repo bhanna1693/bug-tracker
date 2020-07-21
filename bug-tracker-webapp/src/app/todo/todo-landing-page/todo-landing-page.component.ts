@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {ProjectTypeService} from "../services/project-type.service";
 
 @Component({
   selector: 'app-todo-landing-page',
@@ -20,11 +19,7 @@ export class TodoLandingPageComponent implements OnInit {
     }
   ];
 
-  constructor(private projectTypeService: ProjectTypeService) { }
-
-  get projectType() {
-    return this.projectTypeService.type;
-  }
+  constructor() { }
 
   ngOnInit(): void {
   }
