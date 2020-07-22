@@ -15,13 +15,13 @@ export class AppService {
               private router: Router) {
   }
 
-  authenticate(credentials: { username: string, password: string }, callback) {
-    const headers = new HttpHeaders(credentials ? {
-      authorization: 'Basic ' + btoa(credentials.username + ':' + credentials.password)
-    } : {});
+  authenticate(credentials?: { username: string, password: string }, callback?) {
+    // const headers = new HttpHeaders(credentials ? {
+    //   authorization: 'Basic ' + btoa(credentials.username + ':' + credentials.password)
+    // } : {});
 
     //TODO: replace request with profile for user
-    this.http.get(environment.API_BASE_URL + '/employees/1', {headers: headers})
+    this.http.get(environment.API_BASE_URL + '/employees/1')
       .subscribe(response => {
         // if response successful, set authenticate to true and execute callback()
         this.employee = response;

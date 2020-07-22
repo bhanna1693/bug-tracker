@@ -1,10 +1,9 @@
 package com.bhanna.bugtracker.task;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class TaskController {
@@ -15,12 +14,29 @@ public class TaskController {
         this.taskService = taskService;
     }
 
-    @GetMapping("/task")
-    public List<Task> fetchAllTasks(@PathVariable Long id) {
-
-        return taskService.fetchAllTasks(id);
+    @GetMapping("/tasks")
+    public List<Task> fetchAllTasks() {
+        return taskService.fetchAllTasks();
     }
 
+    @PostMapping("/tasks")
+    public Task addTask(@RequestBody Task task) {
+        return taskService.addTask(task);
+    }
 
+    @PutMapping("/task/{id}")
+    public Optional<Task> editTask(@RequestBody Task task, @PathVariable Long id) {
+        return taskService.editTask(task, id);
+    }
+
+    @DeleteMapping("/tasks/{id}")
+    public void deleteTask(@PathVariable Long id) {
+        taskService.deleteTask(id);
+    }
+
+    @PostMapping("/task-toggle-completed/{id}")
+    public void markTaskAsCompleted(@PathVariable Long id) {
+        taskService.markTaskAsCompleted(id);
+    }
 
 }

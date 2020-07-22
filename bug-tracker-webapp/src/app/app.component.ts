@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {NavService} from "./nav/nav.service";
+import {AppService} from "./services/app.service";
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,8 @@ import {NavService} from "./nav/nav.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  constructor(private navService: NavService) {
+  constructor(private navService: NavService,
+              private appService: AppService) {
   }
 
   get isLargeScreen() {
@@ -15,6 +17,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.appService.authenticate()
   }
 
 }

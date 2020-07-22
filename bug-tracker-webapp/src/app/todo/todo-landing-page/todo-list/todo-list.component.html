@@ -1,5 +1,5 @@
 <ul>
-  <li *ngFor="let item of listDTO.items; let i = index">
+  <li *ngFor="let item of listDTO; let i = index">
     <app-todo-list-item [listItem]="item"></app-todo-list-item>
   </li>
 </ul>

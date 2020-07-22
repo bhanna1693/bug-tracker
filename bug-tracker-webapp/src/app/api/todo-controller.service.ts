@@ -11,6 +11,6 @@ export class TodoControllerService {
   }
 
   getListById(id: string) {
-    return this.http.get(environment.MOCK_DATA + '/todo/list/' + id + '.json');
+    return this.http.get(environment.API_BASE_URL + '/task');
   }
 }
