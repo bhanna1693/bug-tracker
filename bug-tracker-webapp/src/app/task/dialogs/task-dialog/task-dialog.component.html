@@ -1,0 +1,22 @@
+<button mat-icon-button
+        mat-dialog-close
+        class="close-button"
+        tabindex="-1">
+  <mat-icon class="close-icon">close</mat-icon>
+</button>
+<h3 mat-dialog-title>Add Task</h3>
+
+<mat-dialog-content>
+  <form [formGroup]="taskForm">
+    <mat-form-field appearance="outline">
+      <textarea formControlName="title" matInput type="text" placeholder=" e.g. Pick up laundry at 9"></textarea>
+    </mat-form-field>
+
+    <div>
+      <button mat-raised-button color="primary" (click)="addTask()">
+        Add Task
+      </button>
+    </div>
+  </form>
+
+</mat-dialog-content>

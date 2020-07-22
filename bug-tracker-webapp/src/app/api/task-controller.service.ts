@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
+import {Task} from "../models/task";
 
 @Injectable({
   providedIn: 'root'
@@ -11,10 +12,14 @@ export class TaskControllerService {
   }
 
   getListById(id: string) {
-    return this.http.get(environment.API_BASE_URL + '/tasks');
+    return this.http.get<Task[]>(environment.API_BASE_URL + '/tasks');
   }
 
   markTaskAsCompleted(id: string) {
     return this.http.post(environment.API_BASE_URL + '/tasks/toggle-completed/' + id, null);
+  }
+
+  addTask(task: Task) {
+    return this.http.post<Task>(environment.API_BASE_URL + '/tasks', task);
   }
 }

@@ -1,8 +1,11 @@
-<div class="container">
+<div class="container mt-3">
   <h1>Task Page</h1>
+  <button (click)="addTask()" mat-button>
+    <mat-icon>add</mat-icon>
+  </button>
 
   <ul>
-    <li *ngFor="let item of listDTO; let i = index">
+    <li *ngFor="let item of taskDTO; let i = index">
       <app-task-list-item [listItem]="item"></app-task-list-item>
     </li>
   </ul>

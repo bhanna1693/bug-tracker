@@ -2,27 +2,28 @@ import { Injectable } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {TaskControllerService} from "../../api/task-controller.service";
 import {finalize} from "rxjs/operators";
+import {Task} from "../../models/task";
 
 @Injectable()
 export class TaskService {
   loading = false;
-  listDTO: any;
+  taskDTO: Task[];
 
   constructor(private activatedRoute: ActivatedRoute,
               private taskControllerService: TaskControllerService) {
-    this.onInit();
+    this.fetchTasks();
   }
 
-  get listId() {
-    return this.activatedRoute.snapshot.paramMap.get('listId');
+  get taskId() {
+    return this.activatedRoute.snapshot.paramMap.get('taskId');
   }
 
-  onInit() {
+  fetchTasks() {
     this.loading = true;
-    this.taskControllerService.getListById(this.listId)
+    this.taskControllerService.getListById(this.taskId)
       .pipe(
         finalize(() => this.loading = false)
       )
-      .subscribe(resp => this.listDTO = resp);
+      .subscribe(resp => this.taskDTO = resp);
   }
 }
