@@ -16,12 +16,12 @@ public class Task {
     private String title;
     private Boolean completed;
     private String notes;
-    private Long orderNo;
+    private Integer orderNo;
 
     public Task() {
     }
 
-    public Task(String title, Boolean completed, String notes, Long orderNo) {
+    public Task(String title, Boolean completed, String notes, Integer orderNo) {
         this.title = title;
         this.completed = completed;
         this.notes = notes;
@@ -88,11 +88,11 @@ public class Task {
         this.notes = notes;
     }
 
-    public Long getOrderNo() {
+    public Integer getOrderNo() {
         return orderNo;
     }
 
-    public void setOrderNo(Long orderNo) {
+    public void setOrderNo(Integer orderNo) {
         this.orderNo = orderNo;
     }
 }
