@@ -5,7 +5,7 @@ import {environment} from "../../environments/environment";
 @Injectable({
   providedIn: 'root'
 })
-export class TodoControllerService {
+export class TaskControllerService {
 
   constructor(private http: HttpClient) {
   }

@@ -5,7 +5,7 @@ import {HomeComponent} from "./home/home.component";
 
 
 const routes: Routes = [
-  {path: 'todo', loadChildren: () => import('./todo/todo.module').then(m => m.TodoModule)},
+  {path: 'task', loadChildren: () => import('./task/task.module').then(m => m.TaskModule)},
   {path: 'login', component: LoginComponent},
   {path: '', component: HomeComponent},
   {path: '**', redirectTo: ''}

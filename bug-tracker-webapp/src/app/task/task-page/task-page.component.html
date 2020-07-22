@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Task Page</h1>
+
+  <ul>
+    <li *ngFor="let item of listDTO; let i = index">
+      <app-task-list-item [listItem]="item"></app-task-list-item>
+    </li>
+  </ul>
+</div>

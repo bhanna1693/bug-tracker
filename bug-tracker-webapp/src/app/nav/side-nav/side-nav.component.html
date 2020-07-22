@@ -1,5 +1,5 @@
 <mat-nav-list>
-  <a mat-list-item *ngFor="let n of navItems" [routerLink]="['./todo', (n.title | lowercase)]">
+  <a mat-list-item *ngFor="let n of navItems" [routerLink]="['./task', (n.title | lowercase)]">
     <mat-icon matListIcon>{{n.icon}}</mat-icon>
 
     <h3 matLine> {{n.title}} </h3>

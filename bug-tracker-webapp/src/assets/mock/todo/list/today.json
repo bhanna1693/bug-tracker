@@ -2,7 +2,7 @@
   "listId": "1",
   "items": [
     {
-      "title": "Title of todo list item",
+      "title": "Title of task list item",
       "comments": [
         {
           "comment": "comment #1 for list item",
@@ -19,7 +19,7 @@
       "completed": false
     },
     {
-      "title": "Another Title of todo list item",
+      "title": "Another Title of task list item",
       "comments": [],
       "id": "456",
       "orderNo": 1,

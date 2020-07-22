@@ -1,16 +1,15 @@
-import {Injectable} from '@angular/core';
-import {TodoControllerService} from "../../../api/todo-controller.service";
-import {Observable} from "rxjs";
+import { Injectable } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+import {TaskControllerService} from "../../api/task-controller.service";
 import {finalize} from "rxjs/operators";
 
 @Injectable()
-export class TodoListService {
+export class TaskService {
   loading = false;
   listDTO: any;
 
   constructor(private activatedRoute: ActivatedRoute,
-              private todoControllerService: TodoControllerService) {
+              private taskControllerService: TaskControllerService) {
     this.onInit();
   }
 
@@ -20,7 +19,7 @@ export class TodoListService {
 
   onInit() {
     this.loading = true;
-    this.todoControllerService.getListById(this.listId)
+    this.taskControllerService.getListById(this.listId)
       .pipe(
         finalize(() => this.loading = false)
       )
