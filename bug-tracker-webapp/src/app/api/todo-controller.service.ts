@@ -11,6 +11,10 @@ export class TodoControllerService {
   }
 
   getListById(id: string) {
-    return this.http.get(environment.API_BASE_URL + '/task');
+    return this.http.get(environment.API_BASE_URL + '/tasks');
+  }
+
+  markTaskAsCompleted(id: string) {
+    return this.http.post(environment.API_BASE_URL + '/tasks/toggle-completed/' + id, null);
   }
 }

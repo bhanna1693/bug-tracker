@@ -24,7 +24,7 @@ public class TaskController {
         return taskService.addTask(task);
     }
 
-    @PutMapping("/task/{id}")
+    @PutMapping("/tasks/{id}")
     public Optional<Task> editTask(@RequestBody Task task, @PathVariable Long id) {
         return taskService.editTask(task, id);
     }
@@ -34,7 +34,7 @@ public class TaskController {
         taskService.deleteTask(id);
     }
 
-    @PostMapping("/task-toggle-completed/{id}")
+    @PostMapping("/tasks/toggle-completed/{id}")
     public void markTaskAsCompleted(@PathVariable Long id) {
         taskService.markTaskAsCompleted(id);
     }
