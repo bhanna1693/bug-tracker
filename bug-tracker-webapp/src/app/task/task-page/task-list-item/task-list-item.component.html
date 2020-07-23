@@ -6,7 +6,7 @@
     <mat-icon>{{task.completed ? 'check_circle' : 'radio_button_unchecked'}}</mat-icon>
   </button>
 
-  <div class="d-flex flex-column">
+  <div class="d-flex flex-column clicker" (click)="editTask()">
     <h3 class="m-0">{{task.title}}</h3>
     <p class="text-muted m-0">{{task.notes}}</p>
   </div>

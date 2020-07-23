@@ -23,6 +23,10 @@ export class TaskControllerService {
     return this.http.post<Task>(environment.API_BASE_URL + '/tasks', task);
   }
 
+  editTask(task: Task) {
+    return this.http.put<Task>(environment.API_BASE_URL + '/tasks/' + task.id, task);
+  }
+
   deleteTask(id: string) {
     return this.http.delete<void>(environment.API_BASE_URL + '/tasks/' + id);
   }

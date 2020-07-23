@@ -4,21 +4,27 @@
         tabindex="-1">
   <mat-icon class="close-icon">close</mat-icon>
 </button>
-<h3 mat-dialog-title>Add Task</h3>
+<h3 mat-dialog-title>{{title}}</h3>
 
-<mat-dialog-content>
-  <form [formGroup]="taskForm">
+<form [formGroup]="taskForm">
+  <mat-dialog-content>
     <mat-form-field appearance="outline">
       <textarea formControlName="title" matInput type="text"
                 placeholder=" e.g. Pick up laundry at 9"
                 aria-label="title"></textarea>
     </mat-form-field>
 
-    <div>
-      <button mat-raised-button color="primary" (click)="addTask()">
-        Add Task
-      </button>
-    </div>
-  </form>
+  </mat-dialog-content>
 
-</mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="addTask()"
+            *ngIf="data.crudType === crud.CREATE">
+      Add Task
+    </button>
+    <button mat-raised-button color="primary" (click)="editTask()"
+            *ngIf="data.crudType === crud.UPDATE">
+      Add Task
+    </button>
+
+  </mat-dialog-actions>
+</form>
