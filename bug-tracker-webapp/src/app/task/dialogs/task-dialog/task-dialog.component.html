@@ -9,7 +9,9 @@
 <mat-dialog-content>
   <form [formGroup]="taskForm">
     <mat-form-field appearance="outline">
-      <textarea formControlName="title" matInput type="text" placeholder=" e.g. Pick up laundry at 9"></textarea>
+      <textarea formControlName="title" matInput type="text"
+                placeholder=" e.g. Pick up laundry at 9"
+                aria-label="title"></textarea>
     </mat-form-field>
 
     <div>

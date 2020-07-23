@@ -13,6 +13,8 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {ReactiveFormsModule} from "@angular/forms";
+import {MatMenuModule} from "@angular/material/menu";
+import { TaskListItemMenuComponent } from './task-page/task-list-item/task-list-item-menu/task-list-item-menu.component';
 
 
 @NgModule({
@@ -20,7 +22,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     TaskComponent,
     TaskPageComponent,
     TaskListItemComponent,
-    TaskDialogComponent
+    TaskDialogComponent,
+    TaskListItemMenuComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +34,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatMenuModule
   ]
 })
 export class TaskModule {

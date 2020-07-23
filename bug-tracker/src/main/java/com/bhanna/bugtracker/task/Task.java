@@ -12,7 +12,7 @@ public class Task {
 
     @Id
     @GeneratedValue
-    private Long Id;
+    private Long id;
     private String title;
     private Boolean completed;
     private String notes;
@@ -31,7 +31,7 @@ public class Task {
     @Override
     public String toString() {
         return "Task{" +
-                "Id=" + Id +
+                "Id=" + id +
                 ", title='" + title + '\'' +
                 ", completed=" + completed +
                 ", notes='" + notes + '\'' +
@@ -44,7 +44,7 @@ public class Task {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Task task = (Task) o;
-        return Objects.equals(Id, task.Id) &&
+        return Objects.equals(id, task.id) &&
                 Objects.equals(title, task.title) &&
                 Objects.equals(completed, task.completed) &&
                 Objects.equals(notes, task.notes) &&
@@ -53,15 +53,15 @@ public class Task {
 
     @Override
     public int hashCode() {
-        return Objects.hash(Id, title, completed, notes, orderNo);
+        return Objects.hash(id, title, completed, notes, orderNo);
     }
 
     public Long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Long id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getTitle() {

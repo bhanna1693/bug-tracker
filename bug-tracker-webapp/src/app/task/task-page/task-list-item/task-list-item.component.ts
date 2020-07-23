@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {TaskControllerService} from "../../../api/task-controller.service";
+import {TaskService} from "../../services/task.service";
+import {Task} from "../../../models/task";
 
 @Component({
   selector: 'app-task-list-item',
@@ -7,18 +8,17 @@ import {TaskControllerService} from "../../../api/task-controller.service";
   styleUrls: ['./task-list-item.component.css']
 })
 export class TaskListItemComponent implements OnInit {
-  @Input() listItem;
+  @Input() task: Task;
 
-  constructor(private taskControllerService: TaskControllerService) { }
+  constructor(private taskService: TaskService) {
+  }
 
   ngOnInit(): void {
   }
 
   toggleCompleted() {
     // toggle completed status
-    this.listItem.completed = !this.listItem.completed;
-    this.taskControllerService.markTaskAsCompleted(this.listItem.id)
-      .subscribe(null);
+    this.taskService.toggleCompleted(this.task)
   }
 
 }

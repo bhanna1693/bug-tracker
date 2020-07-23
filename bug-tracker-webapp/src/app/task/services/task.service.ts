@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {TaskControllerService} from "../../api/task-controller.service";
 import {finalize} from "rxjs/operators";
@@ -25,5 +25,22 @@ export class TaskService {
         finalize(() => this.loading = false)
       )
       .subscribe(resp => this.taskDTO = resp);
+  }
+
+  toggleCompleted(task: Task) {
+    this.taskControllerService.markTaskAsCompleted(task.id.toString())
+      .subscribe(() => {
+        task.completed = !task.completed;
+      });
+  }
+
+  deleteTask(task: Task) {
+    this.taskControllerService.deleteTask(task.id.toString())
+      .subscribe(() => {
+        const index = this.taskDTO.findIndex(t => t.id === task.id);
+        if (index > -1) {
+          this.taskDTO.splice(index, 1);
+        }
+      });
   }
 }
