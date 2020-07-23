@@ -15,6 +15,10 @@ export class TaskListItemMenuComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  editTask() {
+    this.taskService.editTask(this.task);
+  }
+
   deleteTask() {
     this.taskService.deleteTask(this.task);
   }

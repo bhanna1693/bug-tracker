@@ -39,7 +39,9 @@ export class TaskService {
     this.dialog.open(TaskDialogComponent, {
       data
     }).afterClosed().subscribe(task => {
-      this.fetchTasks();
+      if (task) {
+        this.fetchTasks();
+      }
     });
   }
 
@@ -58,7 +60,10 @@ export class TaskService {
     this.dialog.open(TaskDialogComponent, {
       data
     }).afterClosed().subscribe(task => {
-      this.fetchTasks();
+      if (task) {
+        this.fetchTasks();
+      }
+
     })
   }
 
