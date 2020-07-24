@@ -7,6 +7,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {TaskDialogComponent} from "../dialogs/task-dialog/task-dialog.component";
 import {TaskDialogData} from "../dialogs/task-dialog/task-dialog-data";
 import {Crud} from "../../models/crud.enum";
+import {CdkDragDrop, moveItemInArray} from "@angular/cdk/drag-drop";
 
 @Injectable()
 export class TaskService {
@@ -30,6 +31,11 @@ export class TaskService {
         finalize(() => this.loading = false)
       )
       .subscribe(resp => this.taskDTO = resp);
+  }
+
+  moveItemInArray(e: CdkDragDrop<Task[]>) {
+    moveItemInArray(this.taskDTO, e.previousIndex, e.currentIndex);
+    // update backend orderNo
   }
 
   addTask() {
