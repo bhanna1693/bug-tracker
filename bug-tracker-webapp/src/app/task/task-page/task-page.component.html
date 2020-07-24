@@ -1,11 +1,15 @@
 <div class="container mt-3">
-  <h1>Task Page</h1>
-  <button (click)="openTaskDialog()"
-          class="mb-3"
-          mat-flat-button color="primary">
-    <mat-icon>add</mat-icon>
-    <span>Add Task</span>
-  </button>
+  <div class="d-flex mb-3">
+    <h1>Task Page</h1>
+
+    <div class="ml-5">
+      <button (click)="openTaskDialog()"
+              mat-flat-button color="primary">
+        <mat-icon>add</mat-icon>
+        <span>Add Task</span>
+      </button>
+    </div>
+  </div>
 
   <ul cdkDropList (cdkDropListDropped)="drop($event)">
     <li cdkDrag *ngFor="let item of taskDTO; let i = index">
