@@ -34,6 +34,8 @@ export class TaskDialogComponent implements OnInit {
     return this.fb.group({
       title: [null, [Validators.required]],
       notes: [null],
+      completed: [false],
+      orderNo: [null],
       id: [null]
     })
   }

@@ -44,10 +44,10 @@ public class TaskService {
     }
 
     public void markTaskAsCompleted(Long id) {
-        Optional<Task> task = taskRepository.findById(id);
-        task.map(task1 -> {
-            task1.setCompleted(!task1.getCompleted());
-            return taskRepository.save(task1);
+        Optional<Task> markedTask = taskRepository.findById(id);
+        markedTask.map(task -> {
+            task.setCompleted(!task.getCompleted());
+            return taskRepository.save(task);
         });
     }
 }

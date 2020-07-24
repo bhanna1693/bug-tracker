@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/bug_tracker?serverTimezone=UTC
+#    url: jdbc:mysql://localhost:3306/bug_tracker?serverTimezone=UTC
     username: root
     password: password
   jpa:
