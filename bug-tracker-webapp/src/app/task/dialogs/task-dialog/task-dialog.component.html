@@ -15,7 +15,8 @@
     </mat-form-field>
 
     <mat-form-field appearance="outline"
-                    *ngIf="taskForm.get('title').value">
+                    *ngIf="taskForm.get('title').value"
+                    [@slideInOut]>
       <textarea formControlName="notes" matInput type="text"
                 placeholder=" Notes "
                 aria-label="notes"></textarea>

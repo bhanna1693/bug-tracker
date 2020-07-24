@@ -4,11 +4,13 @@ import {TaskDialogData} from "./task-dialog-data";
 import {TaskControllerService} from "../../../api/task-controller.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Crud} from "../../../models/crud.enum";
+import {slideInOutAnimation} from "../../../animations/slide-in-out-animation";
 
 @Component({
   selector: 'app-task-dialog',
   templateUrl: './task-dialog.component.html',
-  styleUrls: ['./task-dialog.component.css']
+  styleUrls: ['./task-dialog.component.css'],
+  animations: [slideInOutAnimation]
 })
 export class TaskDialogComponent implements OnInit {
   taskForm: FormGroup;
