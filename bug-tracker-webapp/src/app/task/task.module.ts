@@ -16,6 +16,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {MatMenuModule} from "@angular/material/menu";
 import { TaskListItemMenuComponent } from './task-page/task-list-item/task-list-item-menu/task-list-item-menu.component';
 import {DragDropModule} from "@angular/cdk/drag-drop";
+import { AddTaskQuickComponent } from './task-page/add-task-quick/add-task-quick.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {DragDropModule} from "@angular/cdk/drag-drop";
     TaskPageComponent,
     TaskListItemComponent,
     TaskDialogComponent,
-    TaskListItemMenuComponent
+    TaskListItemMenuComponent,
+    AddTaskQuickComponent
   ],
   imports: [
     CommonModule,

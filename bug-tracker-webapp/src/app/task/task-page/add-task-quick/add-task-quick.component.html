@@ -1,0 +1,17 @@
+<form [formGroup]="taskForm" (ngSubmit)="emitAddTask()">
+  <mat-form-field appearance="outline" class="w-100">
+    <input #titleInput formControlName="title" matInput type="text"
+           placeholder=" e.g. Pick up laundry at 9"
+           aria-label="title" id="title"/>
+  </mat-form-field>
+
+  <div>
+    <button type="submit" mat-flat-button color="primary">
+      Add Task
+    </button>
+    <button type="button" mat-flat-button class="ml-3"
+            (click)="emitCancel()">
+      Cancel
+    </button>
+  </div>
+</form>

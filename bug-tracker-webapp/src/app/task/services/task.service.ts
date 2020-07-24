@@ -27,9 +27,7 @@ export class TaskService {
   fetchTasks() {
     this.loading = true;
     this.taskControllerService.getListById(this.taskId)
-      .pipe(
-        finalize(() => this.loading = false)
-      )
+      .pipe(finalize(() => this.loading = false))
       .subscribe(resp => this.taskDTO = resp);
   }
 
@@ -38,9 +36,9 @@ export class TaskService {
     // update backend orderNo
   }
 
-  addTask() {
+  openTaskDialog(task?: Task) {
     const data: TaskDialogData = {
-      crudType: Crud.CREATE
+      crudType: task ? Crud.UPDATE : Crud.CREATE
     }
     this.dialog.open(TaskDialogComponent, {
       data
@@ -56,21 +54,6 @@ export class TaskService {
       .subscribe(() => {
         task.completed = !task.completed;
       });
-  }
-
-  editTask(task: Task) {
-    const data: TaskDialogData = {
-      crudType: Crud.UPDATE,
-      task
-    }
-    this.dialog.open(TaskDialogComponent, {
-      data
-    }).afterClosed().subscribe(task => {
-      if (task) {
-        this.fetchTasks();
-      }
-
-    })
   }
 
   deleteTask(task: Task) {

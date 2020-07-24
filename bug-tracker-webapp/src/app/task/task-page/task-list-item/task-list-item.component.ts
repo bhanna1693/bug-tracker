@@ -21,8 +21,8 @@ export class TaskListItemComponent implements OnInit {
     this.taskService.toggleCompleted(this.task)
   }
 
-  editTask() {
-    this.taskService.editTask(this.task);
+  openTaskDialog() {
+    this.taskService.openTaskDialog(this.task);
   }
 
 }

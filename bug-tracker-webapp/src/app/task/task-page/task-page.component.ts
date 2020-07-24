@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {TaskService} from "../services/task.service";
-import {CdkDragDrop, moveItemInArray} from "@angular/cdk/drag-drop";
+import {CdkDragDrop} from "@angular/cdk/drag-drop";
 import {Task} from "../../models/task";
+import {TaskControllerService} from "../../api/task-controller.service";
 
 @Component({
   selector: 'app-task-page',
@@ -10,8 +11,10 @@ import {Task} from "../../models/task";
   providers: [TaskService]
 })
 export class TaskPageComponent implements OnInit {
+  showTaskForm = false;
 
-  constructor(private taskService: TaskService) {
+  constructor(private taskService: TaskService,
+              private taskControllerService: TaskControllerService) {
   }
 
   get taskDTO() {
@@ -21,11 +24,19 @@ export class TaskPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addTask() {
-    this.taskService.addTask();
+  openTaskDialog() {
+    this.taskService.openTaskDialog();
   }
 
   drop(e: CdkDragDrop<Task[]>) {
     this.taskService.moveItemInArray(e);
+  }
+
+  onAddTask(e: Task) {
+    this.taskControllerService.addTask(e)
+      .subscribe(resp => {
+        this.showTaskForm = false;
+        this.taskService.fetchTasks();
+      });
   }
 }
