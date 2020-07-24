@@ -14,6 +14,14 @@
                 aria-label="title"></textarea>
     </mat-form-field>
 
+    <mat-form-field appearance="outline"
+                    *ngIf="taskForm.get('title').value">
+      <textarea formControlName="notes" matInput type="text"
+                placeholder=" Notes "
+                aria-label="notes"></textarea>
+    </mat-form-field>
+
+
   </mat-dialog-content>
 
   <mat-dialog-actions>

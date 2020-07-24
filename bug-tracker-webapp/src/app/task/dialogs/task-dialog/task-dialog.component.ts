@@ -31,6 +31,7 @@ export class TaskDialogComponent implements OnInit {
   buildForm(): FormGroup {
     return this.fb.group({
       title: [null, [Validators.required]],
+      notes: [null],
       id: [null]
     })
   }
