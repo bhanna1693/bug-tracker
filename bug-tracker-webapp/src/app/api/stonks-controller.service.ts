@@ -11,8 +11,12 @@ export class StonksControllerService {
   }
 
   getTimeSeriesData(symbol: string) {
-    return this.http.get(environment.API_BASE_URL + '/stonks/demo', {
-      params: {symbol}
+    return this.http.get(environment.API_BASE_URL + '/stonks/time-series-daily/' + symbol);
+  }
+
+  getStockTypeahead(keywords: string) {
+    return this.http.get(environment.API_BASE_URL + '/stonks/typeahead', {
+      params: {keywords}
     });
   }
 
