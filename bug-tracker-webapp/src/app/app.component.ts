@@ -1,15 +1,14 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {NavService} from "./nav/nav.service";
-import {AppService} from "./services/app.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnInit {
-  constructor(private navService: NavService,
-              private appService: AppService) {
+  constructor(private navService: NavService) {
   }
 
   get isLargeScreen() {
@@ -17,7 +16,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.appService.authenticate()
   }
 
 }

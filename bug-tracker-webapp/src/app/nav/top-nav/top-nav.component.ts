@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {AppService} from "../../services/app.service";
 import {NavService} from "../nav.service";
 
 @Component({
@@ -9,14 +8,13 @@ import {NavService} from "../nav.service";
 })
 export class TopNavComponent implements OnInit {
 
-  constructor(private appService: AppService,
-              public navService: NavService) { }
+  constructor(public navService: NavService) { }
 
   ngOnInit(): void {
   }
 
   logout() {
-    this.appService.logout();
+    // TODO: add logout logic
   }
 
 }
