@@ -12,3 +12,7 @@ body {
 .clicker {
   cursor: pointer;
 }
+
+:root {
+  --topnav-height: 64;
+}

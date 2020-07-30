@@ -1,11 +1,13 @@
 <mat-toolbar color="primary">
-  <button mat-button (click)="navService.toggleSideNav()">
+  <button mat-button *ngIf="!(navService.isLargeScreen$ | async)" (click)="navService.toggleSideNav()">
     <mat-icon>menu</mat-icon>
   </button>
 
   <h3 routerLink="/" class="clicker">Bug Tracker Application</h3>
 
   <button mat-button routerLink="/task/today" routerLinkActive="active">Tasks</button>
+  <button mat-button routerLink="/stonks" routerLinkActive="active">Stonks</button>
+
 <!--  <button mat-button routerLink="/login" routerLinkActive="active">Login</button>-->
 <!--  <button mat-button (click)="logout()">Logout</button>-->
 </mat-toolbar>

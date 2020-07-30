@@ -20,7 +20,7 @@ export class NavService implements OnDestroy {
   }
 
   toggleSideNav() {
-    this.isLargeScreen$.next(!this.isLargeScreen$);
+    this.isSideNavOpen$.next(!this.isSideNavOpen$.getValue());
   }
 
   private subscribeToWindowResize() {

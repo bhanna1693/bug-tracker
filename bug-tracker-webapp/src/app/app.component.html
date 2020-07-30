@@ -1,3 +1,6 @@
+<app-top-nav></app-top-nav>
+
+
 <mat-sidenav-container class="all-wrap"
                        [hasBackdrop]="!(isLargeScreen$ | async)"
                        (backdropClick)="isSideNavOpen$.next(false)">
@@ -9,7 +12,6 @@
   </mat-sidenav>
 
   <mat-sidenav-content class="page-wrap">
-    <app-top-nav></app-top-nav>
 
     <main class="content">
       <router-outlet></router-outlet>
