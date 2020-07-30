@@ -11,8 +11,12 @@ export class AppComponent implements OnInit {
   constructor(private navService: NavService) {
   }
 
-  get isLargeScreen() {
-    return this.navService.isLargeScreen;
+  get isLargeScreen$() {
+    return this.navService.isLargeScreen$;
+  }
+
+  get isSideNavOpen$() {
+    return this.navService.isSideNavOpen$;
   }
 
   ngOnInit() {

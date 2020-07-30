@@ -1,14 +1,15 @@
-<app-top-nav></app-top-nav>
-
-<mat-sidenav-container class="all-wrap" [hasBackdrop]="!isLargeScreen">
+<mat-sidenav-container class="all-wrap"
+                       [hasBackdrop]="!(isLargeScreen$ | async)"
+                       (backdropClick)="isSideNavOpen$.next(false)">
   <mat-sidenav fixedInViewport
                fixedTopGap="64"
-               [opened]="isLargeScreen"
-               [mode]="isLargeScreen ? 'side' : 'over'">
+               [opened]="(isLargeScreen$ | async) || (isSideNavOpen$ | async)"
+               [mode]="(isLargeScreen$ | async) ? 'side' : 'over'">
     <app-side-nav></app-side-nav>
   </mat-sidenav>
 
   <mat-sidenav-content class="page-wrap">
+    <app-top-nav></app-top-nav>
 
     <main class="content">
       <router-outlet></router-outlet>

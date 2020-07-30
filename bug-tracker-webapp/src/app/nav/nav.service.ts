@@ -1,13 +1,14 @@
 import {Injectable, OnDestroy} from '@angular/core';
-import {fromEvent, Subject} from "rxjs";
-import {debounceTime, startWith, takeUntil} from "rxjs/operators";
+import {BehaviorSubject, fromEvent, Subject} from "rxjs";
+import {debounceTime, map, startWith, takeUntil} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
 })
 export class NavService implements OnDestroy {
   private destroy$ = new Subject<boolean>();
-  isLargeScreen: boolean;
+  isLargeScreen$ = new BehaviorSubject<boolean>(false);
+  isSideNavOpen$ = new BehaviorSubject<boolean>(false);
 
   constructor() {
     this.subscribeToWindowResize();
@@ -19,7 +20,7 @@ export class NavService implements OnDestroy {
   }
 
   toggleSideNav() {
-    this.isLargeScreen = !this.isLargeScreen;
+    this.isLargeScreen$.next(!this.isLargeScreen$);
   }
 
   private subscribeToWindowResize() {
@@ -28,15 +29,17 @@ export class NavService implements OnDestroy {
         startWith('init'),
         takeUntil(this.destroy$),
         debounceTime(500),
+        map(() => this.isScreenLarge())
       )
-      .subscribe(() => {
-        this.isLargeScreen = this.isScreenLarge();
+      .subscribe((boo) => {
+        this.isLargeScreen$.next(boo);
+        this.isSideNavOpen$.next(boo);
       });
   }
 
   private isScreenLarge(): boolean {
     const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    return width > 599;
+    return width > 786;
   }
 
 }
