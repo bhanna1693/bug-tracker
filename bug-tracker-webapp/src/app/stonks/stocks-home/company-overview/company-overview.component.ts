@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {Observable, of, Subject} from "rxjs";
+import {Component, OnInit} from '@angular/core';
+import {of, Subject} from "rxjs";
 import {CompanyOverview} from "../../../models/stonks/company-overview";
-import {catchError, delay, filter, finalize, map, switchMap} from "rxjs/operators";
+import {catchError, filter, finalize, map, switchMap} from "rxjs/operators";
 import {ActivatedRoute} from "@angular/router";
 import {StonksControllerService} from "../../../api/stonks-controller.service";
 
@@ -11,36 +11,33 @@ import {StonksControllerService} from "../../../api/stonks-controller.service";
   styleUrls: ['./company-overview.component.css']
 })
 export class CompanyOverviewComponent implements OnInit {
+  companyOverviewData: CompanyOverview;
   fetchingCompanyOverviewData = false;
-  companyOverviewData$: Observable<CompanyOverview>;
   errorFetchingCompanyOverviewData$ = new Subject<boolean>();
 
   constructor(private activatedRoute: ActivatedRoute,
-              private stonksControllerService: StonksControllerService) { }
-
-  ngOnInit(): void {
-    this.setCompanyOverviewData();
+              private stonksControllerService: StonksControllerService) {
   }
 
-  setCompanyOverviewData() {
-    this.companyOverviewData$ = this.activatedRoute.queryParamMap
+  ngOnInit(): void {
+    this.activatedRoute.paramMap
       .pipe(
-        delay(3000),
         map((params) => params.get('symbol')),
         filter((symbol) => symbol != null),
-        switchMap((symbol) => {
+        switchMap(symbol => {
           this.fetchingCompanyOverviewData = true;
           return this.stonksControllerService.getCompanyOverview(symbol)
             .pipe(
               catchError(err => {
                 console.error('Error fetching company overview data', err);
                 this.errorFetchingCompanyOverviewData$.next(true);
-                return of(null);
+                return of<null>(null);
               }),
               finalize(() => this.fetchingCompanyOverviewData = false)
             )
         })
       )
+      .subscribe((resp) => this.companyOverviewData = resp)
   }
 
 }

@@ -7,6 +7,7 @@ import {LoadingOrErrorModule} from "../other/loading-or-error/loading-or-error.m
 import {MatDividerModule} from "@angular/material/divider";
 import {CompanyOverviewComponent} from './stocks-home/company-overview/company-overview.component';
 import {StonksSearchModule} from "./stocks-home/stonks-search/stonks-search.module";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {StonksSearchModule} from "./stocks-home/stonks-search/stonks-search.modu
     StonksRoutingModule,
     LoadingOrErrorModule,
     MatDividerModule,
-    StonksSearchModule
+    StonksSearchModule,
+    MatProgressSpinnerModule
   ]
 })
 export class StonksModule {

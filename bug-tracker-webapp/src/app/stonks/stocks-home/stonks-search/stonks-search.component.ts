@@ -46,9 +46,9 @@ export class StonksSearchComponent implements OnInit {
   }
 
   onOptionSelected(e: MatAutocompleteSelectedEvent) {
-    this.router.navigate([], {
-      queryParams: {symbol: e.option.value}
-    })
+    const item = e.option.value as SymbolSearchItem;
+    const symbol = item["1. symbol"];
+    this.router.navigate(['stonks', symbol]);
   }
 
   displayFn(stock: SymbolSearchItem) {
