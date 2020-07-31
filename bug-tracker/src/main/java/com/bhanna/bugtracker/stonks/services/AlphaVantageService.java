@@ -17,4 +17,9 @@ public class AlphaVantageService {
         RestTemplate restTemplate = new RestTemplate();
         return restTemplate.getForObject(baseUrl + "/query?function=SYMBOL_SEARCH&keywords=" + keywords + "&apikey=" + apiKey, Object.class);
     }
+
+    public Object getCompanyOverview(String symbol) {
+        RestTemplate restTemplate = new RestTemplate();
+        return restTemplate.getForObject(baseUrl + "/query?function=OVERVIEW&symbol=" + symbol + "&apikey=" + apiKey, Object.class);
+    }
 }

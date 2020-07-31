@@ -1,6 +1,4 @@
 <div class="container">
-  <h1>Stonks</h1>
-
   <mat-form-field class="example-full-width" style="width: 300px">
     <input type="text"
            placeholder="Pick one"
@@ -8,18 +6,26 @@
            matInput
            [formControl]="myControl"
            [matAutocomplete]="auto">
-    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)="onOptionSelected($event)">
       <mat-option *ngIf="myControl.value?.length <= 2" readonly>
         Please enter 3 or more characters
       </mat-option>
-      <mat-option *ngFor="let option of filteredOption$ | async" [value]="option">
-        {{option['2. name']}}
+      <mat-option *ngFor="let option of filteredOption$ | async" [value]="option['1. symbol']">
+        {{option["2. name"]}} ({{option["1. symbol"]}})
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>
 
-  <div>
-    {{myControl.value | json}}
+  <mat-divider></mat-divider>
+
+  <div *ngIf="companyOverviewData$ | async as data; else loadingOrError.template">
+    <h1>{{data.Name}} {{data.Symbol}}</h1>
+    <p>{{data.Exchange}} - Currency in {{data.Currency}}</p>
   </div>
+
+  <app-loading-or-error #loadingOrError
+                        [errorLoading$]="errorFetchingCompanyOverviewData$"
+                        errorMessage="Error fetching company data. Please try again later"
+  ></app-loading-or-error>
 
 </div>

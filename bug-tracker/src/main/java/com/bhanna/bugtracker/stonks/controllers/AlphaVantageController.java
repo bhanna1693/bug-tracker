@@ -24,4 +24,9 @@ public class AlphaVantageController {
     public Object getTypeaheadSearch(@RequestParam String keywords) {
         return alphaVantageService.getTypeaheadSearch(keywords);
     }
+
+    @GetMapping("/stonks/company-overview")
+    public Object getCompanyOverview(@RequestParam String symbol) {
+        return alphaVantageService.getCompanyOverview(symbol);
+    }
 }

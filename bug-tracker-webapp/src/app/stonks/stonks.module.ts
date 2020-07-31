@@ -7,6 +7,8 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import {MatInputModule} from "@angular/material/input";
+import {LoadingOrErrorModule} from "../other/loading-or-error/loading-or-error.module";
+import {MatDividerModule} from "@angular/material/divider";
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import {MatInputModule} from "@angular/material/input";
     MatFormFieldModule,
     ReactiveFormsModule,
     MatAutocompleteModule,
-    MatInputModule
+    MatInputModule,
+    LoadingOrErrorModule,
+    MatDividerModule
   ]
 })
 export class StonksModule { }
