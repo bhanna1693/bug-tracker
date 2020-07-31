@@ -1,15 +1,20 @@
-<h1>Stonks</h1>
+<div class="container">
+  <h1>Stonks</h1>
 
-<mat-form-field class="example-full-width">
-  <input type="text"
-         placeholder="Pick one"
-         aria-label="Number"
-         matInput
-         [formControl]="myControl"
-         [matAutocomplete]="auto">
-  <mat-autocomplete #auto="matAutocomplete">
-    <mat-option *ngFor="let option of filteredOption$ | async" [value]="option">
-      {{option['2. name']}}
-    </mat-option>
-  </mat-autocomplete>
-</mat-form-field>
+  <mat-form-field class="example-full-width" style="width: 300px">
+    <input type="text"
+           placeholder="Pick one"
+           aria-label="Number"
+           matInput
+           [formControl]="myControl"
+           [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngIf="myControl.value?.length <= 2" readonly>
+        Please enter 3 or more characters
+      </mat-option>
+      <mat-option *ngFor="let option of filteredOption$ | async" [value]="option">
+        {{option['2. name']}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</div>

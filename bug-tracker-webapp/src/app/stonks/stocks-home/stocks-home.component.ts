@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {StonksControllerService} from "../../api/stonks-controller.service";
 import {FormControl} from "@angular/forms";
-import {BehaviorSubject, Observable} from "rxjs";
-import {debounceTime, distinctUntilChanged, map, switchMap} from "rxjs/operators";
+import {concat, Observable, of} from "rxjs";
+import {debounceTime, distinctUntilChanged, filter, map, switchMap} from "rxjs/operators";
 
 @Component({
   selector: 'app-stocks-home',
@@ -10,9 +10,8 @@ import {debounceTime, distinctUntilChanged, map, switchMap} from "rxjs/operators
   styleUrls: ['./stocks-home.component.css']
 })
 export class StocksHomeComponent implements OnInit {
-  stonks = this.stonksControllerService.getTimeSeriesData('AAPL');
   myControl = new FormControl(null);
-  filteredOption$ = new BehaviorSubject<any>([]);
+  filteredOption$: Observable<any>;
 
   constructor(private stonksControllerService: StonksControllerService) {
   }
@@ -22,13 +21,17 @@ export class StocksHomeComponent implements OnInit {
   }
 
   subscribeToFC() {
-    this.myControl.valueChanges
-      .pipe(
-        debounceTime(100),
-        distinctUntilChanged(),
-        switchMap<string, Observable<any>>((keywords) => this.stonksControllerService.getStockTypeahead(keywords)),
-        map(resp => resp['bestMatches'])
-      ).subscribe(resp => this.filteredOption$.next(resp))
+    this.filteredOption$ = concat(
+      of([]),
+      this.myControl.valueChanges
+        .pipe(
+          debounceTime(250),
+          distinctUntilChanged(),
+          filter<string>((keywords) => keywords?.length >= 2),
+          switchMap<string, Observable<any>>((keywords) => this.stonksControllerService.getStockTypeahead(keywords)),
+          map(resp => resp['bestMatches'])
+        )
+    )
   }
 
 }
