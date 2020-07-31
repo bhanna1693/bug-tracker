@@ -8,7 +8,7 @@
            matInput
            [formControl]="myControl"
            [matAutocomplete]="auto">
-    <mat-autocomplete #auto="matAutocomplete">
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
       <mat-option *ngIf="myControl.value?.length <= 2" readonly>
         Please enter 3 or more characters
       </mat-option>
@@ -17,4 +17,9 @@
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>
+
+  <div>
+    {{myControl.value | json}}
+  </div>
+
 </div>

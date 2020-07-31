@@ -3,6 +3,7 @@ import {StonksControllerService} from "../../api/stonks-controller.service";
 import {FormControl} from "@angular/forms";
 import {concat, Observable, of} from "rxjs";
 import {debounceTime, distinctUntilChanged, filter, map, switchMap} from "rxjs/operators";
+import {SymbolSearchItem} from "../../models/stonks/symbol-search";
 
 @Component({
   selector: 'app-stocks-home',
@@ -11,7 +12,7 @@ import {debounceTime, distinctUntilChanged, filter, map, switchMap} from "rxjs/o
 })
 export class StocksHomeComponent implements OnInit {
   myControl = new FormControl(null);
-  filteredOption$: Observable<any>;
+  filteredOption$: Observable<SymbolSearchItem[]>;
 
   constructor(private stonksControllerService: StonksControllerService) {
   }
@@ -27,11 +28,16 @@ export class StocksHomeComponent implements OnInit {
         .pipe(
           debounceTime(250),
           distinctUntilChanged(),
-          filter<string>((keywords) => keywords?.length >= 2),
-          switchMap<string, Observable<any>>((keywords) => this.stonksControllerService.getStockTypeahead(keywords)),
-          map(resp => resp['bestMatches'])
+          filter((keywords) => keywords?.length >= 2),
+          switchMap((keywords) => this.stonksControllerService.getStockTypeahead(keywords)
+            .pipe(map(resp => resp.bestMatches))
+          )
         )
     )
+  }
+
+  displayFn(stock: any) {
+    return stock ? stock['2. name'] : null;
   }
 
 }
