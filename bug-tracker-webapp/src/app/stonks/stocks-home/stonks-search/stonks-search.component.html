@@ -1,0 +1,19 @@
+<mat-form-field class="example-full-width" style="width: 300px" appearance="outline">
+  <input type="text"
+         placeholder="Search for symbols or companies"
+         aria-label="search"
+         matInput
+         [formControl]="typeAheadControl"
+         [matAutocomplete]="auto">
+  <mat-spinner matSuffix [diameter]="24" *ngIf="typeAheadPending"></mat-spinner>
+  <mat-autocomplete #auto="matAutocomplete"
+                    [displayWith]="displayFn"
+                    (optionSelected)="onOptionSelected($event)">
+    <mat-option *ngIf="typeAheadControl.value?.length <= 2" readonly>
+      Please enter 3 or more characters
+    </mat-option>
+    <mat-option *ngFor="let option of filteredOption$ | async" [value]="option['1. symbol']">
+      {{option["2. name"]}} ({{option["1. symbol"]}})
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>

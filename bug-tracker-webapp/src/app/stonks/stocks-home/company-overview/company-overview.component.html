@@ -1,0 +1,9 @@
+<div *ngIf="companyOverviewData$ | async as data; else loadingOrError.template">
+  <h1>{{data.Name}} {{data.Symbol}}</h1>
+  <p>{{data.Exchange}} - Currency in {{data.Currency}}</p>
+</div>
+
+<app-loading-or-error #loadingOrError
+                      [errorLoading$]="errorFetchingCompanyOverviewData$"
+                      errorMessage="Error fetching company data. Please try again later"
+></app-loading-or-error>

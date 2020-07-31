@@ -10,11 +10,18 @@ import {Subject} from "rxjs";
         {{ errorMessage }}
       </div>
       <ng-template #loading>
-        <mat-spinner></mat-spinner>
+        <div class="spinner">
+          <mat-spinner></mat-spinner>
+        </div>
       </ng-template>
     </ng-template>
   `,
-  styles: []
+  styles: [`
+    .spinner {
+      display: flex;
+      justify-content: center;
+    }
+  `]
 })
 export class LoadingOrErrorComponent implements OnInit {
   /**
