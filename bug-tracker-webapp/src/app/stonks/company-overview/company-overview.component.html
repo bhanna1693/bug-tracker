@@ -7,6 +7,45 @@
 <div *ngIf="companyOverviewData$ | async as data; else error">
   <h1>{{data.Name}} {{data.Symbol}}</h1>
   <p>{{data.Exchange}} - Currency in {{data.Currency}}</p>
+
+  <table>
+    <tbody>
+    <tr>
+      <td>Market Cap</td>
+      <td>{{data.MarketCapitalization}}</td>
+    </tr>
+
+    <tr>
+      <td>Beta</td>
+      <td>{{data.Beta}}</td>
+    </tr>
+
+    <tr>
+      <td>PE Ratio</td>
+      <td>{{data.PERatio}}</td>
+    </tr>
+
+    <tr>
+      <td>EPS</td>
+      <td>{{data.EPS}}</td>
+    </tr>
+
+    <tr>
+      <td>Earnings Date</td>
+      <td>?????</td>
+    </tr>
+
+    <tr>
+      <td>Ex-Dividend Date</td>
+      <td>{{data.ExDividendDate}}</td>
+    </tr>
+
+    <tr>
+      <td>1yr Target Est</td>
+      <td>{{data.AnalystTargetPrice}}</td>
+    </tr>
+    </tbody>
+  </table>
 </div>
 
 
