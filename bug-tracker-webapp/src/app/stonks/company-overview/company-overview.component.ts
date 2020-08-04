@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {of, Subject} from "rxjs";
-import {CompanyOverview} from "../../../models/stonks/company-overview";
+import {CompanyOverview} from "../../models/stonks/company-overview";
 import {catchError, filter, finalize, map, switchMap} from "rxjs/operators";
 import {ActivatedRoute} from "@angular/router";
-import {StonksControllerService} from "../../../api/stonks-controller.service";
+import {StonksControllerService} from "../../api/stonks-controller.service";
 
 @Component({
   selector: 'app-company-overview',
@@ -20,22 +20,21 @@ export class CompanyOverviewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.activatedRoute.paramMap
+    this.activatedRoute.paramMap.subscribe(params => {
+      this.fetchCompanyInfo(params.get('symbol'));
+    });
+  }
+
+  fetchCompanyInfo(symbol: string) {
+    this.fetchingCompanyOverviewData = true;
+    this.stonksControllerService.getCompanyOverview(symbol)
       .pipe(
-        map((params) => params.get('symbol')),
-        filter((symbol) => symbol != null),
-        switchMap(symbol => {
-          this.fetchingCompanyOverviewData = true;
-          return this.stonksControllerService.getCompanyOverview(symbol)
-            .pipe(
-              catchError(err => {
-                console.error('Error fetching company overview data', err);
-                this.errorFetchingCompanyOverviewData$.next(true);
-                return of<null>(null);
-              }),
-              finalize(() => this.fetchingCompanyOverviewData = false)
-            )
-        })
+        catchError(err => {
+          console.error('Error fetching company overview data', err);
+          this.errorFetchingCompanyOverviewData$.next(true);
+          return of<null>(null);
+        }),
+        finalize(() => this.fetchingCompanyOverviewData = false)
       )
       .subscribe((resp) => this.companyOverviewData = resp)
   }

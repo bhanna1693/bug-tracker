@@ -1,15 +1,16 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
+import {CompanyOverviewComponent} from "./company-overview/company-overview.component";
+import {StonksLandingPageComponent} from "./stonks-landing-page/stonks-landing-page.component";
 import {StocksHomeComponent} from "./stocks-home/stocks-home.component";
-import {CompanyOverviewComponent} from "./stocks-home/company-overview/company-overview.component";
 
 
 const routes: Routes = [
   {
     path: '',
-    component: StocksHomeComponent,
+    component: StonksLandingPageComponent,
     children: [
-      // {path: '', component: null},
+      {path: '', component: StocksHomeComponent},
       {
         path: ':symbol',
         component: CompanyOverviewComponent
