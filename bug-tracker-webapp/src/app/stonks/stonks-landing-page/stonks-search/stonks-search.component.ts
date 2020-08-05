@@ -1,11 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {FormControl} from "@angular/forms";
-import {concat, Observable, of} from "rxjs";
+import {Component, OnInit} from '@angular/core';
 import {SymbolSearchItem} from "../../../models/stonks/symbol-search";
-import {StonksControllerService} from "../../../api/stonks-controller.service";
 import {Router} from "@angular/router";
-import {debounceTime, distinctUntilChanged, filter, finalize, map, switchMap} from "rxjs/operators";
 import {MatAutocompleteSelectedEvent} from "@angular/material/autocomplete";
+import {StonksLandingPageService} from "../stonks-landing-page.service";
 
 @Component({
   selector: 'app-stonks-search',
@@ -13,36 +10,24 @@ import {MatAutocompleteSelectedEvent} from "@angular/material/autocomplete";
   styleUrls: ['./stonks-search.component.css']
 })
 export class StonksSearchComponent implements OnInit {
-  typeAheadControl = new FormControl(null);
-  typeAheadPending = false;
-  filteredOption$: Observable<SymbolSearchItem[]>;
 
-  constructor(private stonksControllerService: StonksControllerService,
-              private router: Router) {
+  constructor(private router: Router,
+              private stonksLandingPage: StonksLandingPageService) {
+  }
+
+  get typeAheadControl() {
+    return this.stonksLandingPage.typeAheadControl;
+  }
+
+  get typeAheadPending() {
+    return this.stonksLandingPage.typeAheadPending;
+  }
+
+  get filteredOption$() {
+    return this.stonksLandingPage.filteredOption$;
   }
 
   ngOnInit(): void {
-    this.setFilteredOption();
-  }
-
-  setFilteredOption() {
-    this.filteredOption$ = concat(
-      of([]),
-      this.typeAheadControl.valueChanges
-        .pipe(
-          debounceTime(250),
-          distinctUntilChanged(),
-          filter((keywords) => keywords?.length >= 2),
-          switchMap((keywords) => {
-            this.typeAheadPending = true;
-            return this.stonksControllerService.getStockTypeahead(keywords)
-              .pipe(
-                map(resp => resp.bestMatches),
-                finalize(() => this.typeAheadPending = false)
-              )
-          })
-        )
-    )
   }
 
   onOptionSelected(e: MatAutocompleteSelectedEvent) {

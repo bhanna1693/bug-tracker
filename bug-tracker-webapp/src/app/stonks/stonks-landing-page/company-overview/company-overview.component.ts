@@ -1,9 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Observable, of, Subject} from "rxjs";
-import {CompanyOverview} from "../../../models/stonks/company-overview";
-import {catchError, filter, finalize, map, switchMap} from "rxjs/operators";
-import {ActivatedRoute} from "@angular/router";
-import {StonksControllerService} from "../../../api/stonks-controller.service";
+import {StonksLandingPageService} from "../stonks-landing-page.service";
 
 @Component({
   selector: 'app-company-overview',
@@ -11,32 +7,21 @@ import {StonksControllerService} from "../../../api/stonks-controller.service";
   styleUrls: ['./company-overview.component.css']
 })
 export class CompanyOverviewComponent implements OnInit {
-  companyOverviewData$: Observable<CompanyOverview>;
-  fetchingCompanyOverviewData = false;
-  errorFetchingCompanyOverviewData$ = new Subject<boolean>();
 
-  constructor(private activatedRoute: ActivatedRoute,
-              private stonksControllerService: StonksControllerService) {
+
+  constructor(private stonksLandingPage: StonksLandingPageService) {
+  }
+
+  get companyOverviewData$() {
+    return this.stonksLandingPage.companyOverviewData$;
+  }
+
+  get errorFetchingCompanyOverviewData$() {
+    return this.stonksLandingPage.errorFetchingCompanyOverviewData$;
   }
 
   ngOnInit(): void {
-    this.companyOverviewData$ = this.activatedRoute.paramMap
-      .pipe(
-        map((paramMap) => paramMap.get('symbol')),
-        switchMap((symbol) => {
-          this.fetchingCompanyOverviewData = true;
-          this.errorFetchingCompanyOverviewData$.next(false);
-          return this.stonksControllerService.getCompanyOverview(symbol)
-            .pipe(
-              catchError(err => {
-                console.error('Error fetching company overview data', err);
-                this.errorFetchingCompanyOverviewData$.next(true);
-                return of<null>(null);
-              }),
-              finalize(() => this.fetchingCompanyOverviewData = false)
-            )
-        })
-      );
+
   }
 
 }
