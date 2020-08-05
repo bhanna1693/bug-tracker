@@ -1,11 +1,9 @@
 import {Injectable} from '@angular/core';
 import {FormControl} from "@angular/forms";
-import {concat, Observable, of, Subject} from "rxjs";
+import {concat, Observable, of} from "rxjs";
 import {SymbolSearchItem} from "../../models/stonks/symbol-search";
-import {catchError, debounceTime, distinctUntilChanged, filter, finalize, map, switchMap} from "rxjs/operators";
+import {debounceTime, distinctUntilChanged, filter, finalize, map, switchMap} from "rxjs/operators";
 import {StonksControllerService} from "../../api/stonks-controller.service";
-import {CompanyOverview} from "../../models/stonks/company-overview";
-import {ActivatedRoute} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
@@ -14,12 +12,10 @@ export class StonksLandingPageService {
   typeAheadControl = new FormControl(null);
   typeAheadPending = false;
   filteredOption$: Observable<SymbolSearchItem[]>;
-  companyOverviewData$: Observable<CompanyOverview>;
-  fetchingCompanyOverviewData = false;
-  errorFetchingCompanyOverviewData$ = new Subject<boolean>();
 
-  constructor(private stonksControllerService: StonksControllerService,
-              private activatedRoute: ActivatedRoute) {
+
+  constructor(private stonksControllerService: StonksControllerService) {
+    this.setFilteredOption();
   }
 
   setFilteredOption() {
@@ -42,23 +38,4 @@ export class StonksLandingPageService {
     )
   }
 
-  setCompanyOverviewData() {
-    this.companyOverviewData$ = this.activatedRoute.paramMap
-      .pipe(
-        map((paramMap) => paramMap.get('symbol')),
-        switchMap((symbol) => {
-          this.fetchingCompanyOverviewData = true;
-          this.errorFetchingCompanyOverviewData$.next(false);
-          return this.stonksControllerService.getCompanyOverview(symbol)
-            .pipe(
-              catchError(err => {
-                console.error('Error fetching company overview data', err);
-                this.errorFetchingCompanyOverviewData$.next(true);
-                return of<null>(null);
-              }),
-              finalize(() => this.fetchingCompanyOverviewData = false)
-            )
-        })
-      );
-  }
 }

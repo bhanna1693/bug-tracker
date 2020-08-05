@@ -1,5 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {StonksLandingPageService} from "../stonks-landing-page.service";
+import {catchError, finalize, map, switchMap} from "rxjs/operators";
+import {forkJoin, Observable, of, Subject} from "rxjs";
+import {CompanyOverview} from "../../../models/stonks/company-overview";
+import {ActivatedRoute} from "@angular/router";
+import {StonksControllerService} from "../../../api/stonks-controller.service";
+import {GlobalQuote} from "../../../models/stonks/global-quote";
 
 @Component({
   selector: 'app-company-overview',
@@ -7,21 +13,43 @@ import {StonksLandingPageService} from "../stonks-landing-page.service";
   styleUrls: ['./company-overview.component.css']
 })
 export class CompanyOverviewComponent implements OnInit {
+  companyOverviewData$: Observable<{ overview: CompanyOverview, globalQuote: GlobalQuote }>;
+  fetchingCompanyOverviewData = false;
+  errorFetchingCompanyOverviewData$ = new Subject<boolean>();
 
-
-  constructor(private stonksLandingPage: StonksLandingPageService) {
-  }
-
-  get companyOverviewData$() {
-    return this.stonksLandingPage.companyOverviewData$;
-  }
-
-  get errorFetchingCompanyOverviewData$() {
-    return this.stonksLandingPage.errorFetchingCompanyOverviewData$;
+  constructor(private stonksLandingPage: StonksLandingPageService,
+              private activatedRoute: ActivatedRoute,
+              private stonksControllerService: StonksControllerService) {
   }
 
   ngOnInit(): void {
+    this.setCompanyOverviewData();
+  }
 
+  setCompanyOverviewData() {
+    this.companyOverviewData$ = this.activatedRoute.paramMap
+      .pipe(
+        map((paramMap) => paramMap.get('symbol')),
+        switchMap((symbol: string) => {
+          this.fetchingCompanyOverviewData = true;
+          this.errorFetchingCompanyOverviewData$.next(false);
+          return forkJoin([
+            this.stonksControllerService.getCompanyOverview(symbol),
+            this.stonksControllerService.getGlobalQuote(symbol)
+          ])
+            .pipe(
+              map(([overview, globalQuote]) => {
+                console.log({overview, globalQuote})
+                return {overview, globalQuote}
+              }),
+              catchError(err => {
+                console.error('Error fetching company data', err);
+                return of(null);
+              }),
+              finalize(() => this.fetchingCompanyOverviewData = false)
+            )
+        })
+      );
   }
 
 }

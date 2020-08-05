@@ -5,29 +5,36 @@
 </ng-template>
 
 <div *ngIf="companyOverviewData$ | async as data; else error">
-  <h1>{{data.Name}} {{data.Symbol}}</h1>
-  <p>{{data.Exchange}} - Currency in {{data.Currency}}</p>
+  <header>
+    <h1>{{data.overview.Name}} {{data.overview.Symbol}}</h1>
+    <p>{{data.overview.Exchange}} - Currency in {{data.overview.Currency}}</p>
+  </header>
+
+  <section class="quote-info d-flex">
+    <span>{{data.globalQuote["05. price"] | currency}}</span>
+    <span>{{data.globalQuote["09. change"] | currency}} {{data.globalQuote["10. change percent"]}}</span>
+  </section>
 
   <table>
     <tbody>
     <tr>
       <td>Market Cap</td>
-      <td>{{data.MarketCapitalization}}</td>
+      <td>{{data.overview.MarketCapitalization}}</td>
     </tr>
 
     <tr>
       <td>Beta</td>
-      <td>{{data.Beta}}</td>
+      <td>{{data.overview.Beta}}</td>
     </tr>
 
     <tr>
       <td>PE Ratio</td>
-      <td>{{data.PERatio}}</td>
+      <td>{{data.overview.PERatio}}</td>
     </tr>
 
     <tr>
       <td>EPS</td>
-      <td>{{data.EPS}}</td>
+      <td>{{data.overview.EPS}}</td>
     </tr>
 
     <tr>
@@ -37,12 +44,12 @@
 
     <tr>
       <td>Ex-Dividend Date</td>
-      <td>{{data.ExDividendDate}}</td>
+      <td>{{data.overview.ExDividendDate}}</td>
     </tr>
 
     <tr>
       <td>1yr Target Est</td>
-      <td>{{data.AnalystTargetPrice}}</td>
+      <td>{{data.overview.AnalystTargetPrice}}</td>
     </tr>
     </tbody>
   </table>

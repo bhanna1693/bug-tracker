@@ -4,6 +4,7 @@ import {environment} from "../../environments/environment";
 import {SymbolSearch} from "../models/stonks/symbol-search";
 import {CompanyOverview} from "../models/stonks/company-overview";
 import {GlobalQuote} from "../models/stonks/global-quote";
+import {map} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -32,7 +33,7 @@ export class StonksControllerService {
   getGlobalQuote(symbol: string) {
     return this.http.get<GlobalQuote>(environment.API_BASE_URL + '/stonks/global-quote', {
       params: {symbol}
-    });
+    }).pipe(map(resp => resp["Global Quote"]));
   }
 
 }
