@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable, of, Subject} from "rxjs";
-import {CompanyOverview} from "../../models/stonks/company-overview";
+import {CompanyOverview} from "../../../models/stonks/company-overview";
 import {catchError, filter, finalize, map, switchMap} from "rxjs/operators";
 import {ActivatedRoute} from "@angular/router";
-import {StonksControllerService} from "../../api/stonks-controller.service";
+import {StonksControllerService} from "../../../api/stonks-controller.service";
 
 @Component({
   selector: 'app-company-overview',
