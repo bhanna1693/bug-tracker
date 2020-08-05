@@ -13,12 +13,11 @@ import {GlobalQuote} from "../../../models/stonks/global-quote";
   styleUrls: ['./company-overview.component.css']
 })
 export class CompanyOverviewComponent implements OnInit {
-  companyOverviewData$: Observable<{ overview: CompanyOverview, globalQuote: GlobalQuote }>;
-  fetchingCompanyOverviewData = false;
-  errorFetchingCompanyOverviewData$ = new Subject<boolean>();
+  companyData$: Observable<{ overview: CompanyOverview, globalQuote: GlobalQuote }>;
+  fetchingCompanyData = false;
+  errorFetchingCompanyData$ = new Subject<boolean>();
 
-  constructor(private stonksLandingPage: StonksLandingPageService,
-              private activatedRoute: ActivatedRoute,
+  constructor(private activatedRoute: ActivatedRoute,
               private stonksControllerService: StonksControllerService) {
   }
 
@@ -27,12 +26,12 @@ export class CompanyOverviewComponent implements OnInit {
   }
 
   setCompanyOverviewData() {
-    this.companyOverviewData$ = this.activatedRoute.paramMap
+    this.companyData$ = this.activatedRoute.paramMap
       .pipe(
         map((paramMap) => paramMap.get('symbol')),
         switchMap((symbol: string) => {
-          this.fetchingCompanyOverviewData = true;
-          this.errorFetchingCompanyOverviewData$.next(false);
+          this.fetchingCompanyData = true;
+          this.errorFetchingCompanyData$.next(false);
           return forkJoin([
             this.stonksControllerService.getCompanyOverview(symbol),
             this.stonksControllerService.getGlobalQuote(symbol)
@@ -46,7 +45,7 @@ export class CompanyOverviewComponent implements OnInit {
                 console.error('Error fetching company data', err);
                 return of(null);
               }),
-              finalize(() => this.fetchingCompanyOverviewData = false)
+              finalize(() => this.fetchingCompanyData = false)
             )
         })
       );

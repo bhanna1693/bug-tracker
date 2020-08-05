@@ -1,10 +1,10 @@
 <ng-template #error>
-  <div *ngIf="errorFetchingCompanyOverviewData$ | async" class="alert alert-danger">
+  <div *ngIf="errorFetchingCompanyData$ | async" class="alert alert-danger">
     Error fetching company data. Please try again later.
   </div>
 </ng-template>
 
-<div *ngIf="companyOverviewData$ | async as data; else error">
+<div *ngIf="companyData$ | async as data; else error">
   <header>
     <h1>{{data.overview.Name}} {{data.overview.Symbol}}</h1>
     <p>{{data.overview.Exchange}} - Currency in {{data.overview.Currency}}</p>
