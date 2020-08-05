@@ -22,4 +22,10 @@ public class AlphaVantageService {
         RestTemplate restTemplate = new RestTemplate();
         return restTemplate.getForObject(baseUrl + "/query?function=OVERVIEW&symbol=" + symbol + "&apikey=" + apiKey, Object.class);
     }
+
+    public Object getGlobalQuote(String symbol) {
+        RestTemplate restTemplate = new RestTemplate();
+        return restTemplate.getForObject(baseUrl + "/query?function=GLOBAL_QUOTE&symbol=" + symbol + "&apikey=" + apiKey, Object.class);
+    }
+
 }

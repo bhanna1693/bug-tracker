@@ -29,4 +29,10 @@ public class AlphaVantageController {
     public Object getCompanyOverview(@RequestParam String symbol) {
         return alphaVantageService.getCompanyOverview(symbol);
     }
+
+    @GetMapping("/stonks/global-quote")
+    public Object getGlobalQuote(@RequestParam String symbol) {
+        return alphaVantageService.getGlobalQuote(symbol);
+    }
+
 }
