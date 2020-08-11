@@ -2,11 +2,14 @@ package com.bhanna.bugtracker.stonks.controllers;
 
 import com.bhanna.bugtracker.stonks.models.GlobalQuote;
 import com.bhanna.bugtracker.stonks.models.GlobalQuoteDTO;
+import com.bhanna.bugtracker.stonks.models.SymbolSearchItemDTO;
 import com.bhanna.bugtracker.stonks.services.AlphaVantageService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 public class AlphaVantageController {
@@ -23,7 +26,7 @@ public class AlphaVantageController {
     }
 
     @GetMapping("/stonks/typeahead")
-    public Object getTypeaheadSearch(@RequestParam String keywords) {
+    public List<SymbolSearchItemDTO> getTypeaheadSearch(@RequestParam String keywords) {
         return alphaVantageService.getTypeaheadSearch(keywords);
     }
 

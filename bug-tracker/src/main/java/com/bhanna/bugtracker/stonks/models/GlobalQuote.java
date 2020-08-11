@@ -63,4 +63,20 @@ public class GlobalQuote {
     public String getChangePercent() {
         return changePercent;
     }
+
+    public GlobalQuote(String symbol, String open, String high, String low, String price, String volume, String latestTradingDay, String previousClose, String change, String changePercent) {
+        this.symbol = symbol;
+        this.open = open;
+        this.high = high;
+        this.low = low;
+        this.price = price;
+        this.volume = volume;
+        this.latestTradingDay = latestTradingDay;
+        this.previousClose = previousClose;
+        this.change = change;
+        this.changePercent = changePercent;
+    }
+
+    public GlobalQuote() {
+    }
 }

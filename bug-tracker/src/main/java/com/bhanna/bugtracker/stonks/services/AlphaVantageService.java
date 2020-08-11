@@ -1,13 +1,14 @@
 package com.bhanna.bugtracker.stonks.services;
 
-import com.bhanna.bugtracker.stonks.models.GlobalQuote;
-import com.bhanna.bugtracker.stonks.models.GlobalQuoteDTO;
-import com.bhanna.bugtracker.stonks.models.GlobalQuoteWrapper;
+import com.bhanna.bugtracker.stonks.models.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 @Service
 public class AlphaVantageService {
@@ -19,9 +20,11 @@ public class AlphaVantageService {
         return restTemplate.getForObject(baseUrl + "/query?function=TIME_SERIES_DAILY&symbol=" + symbol + "&apikey=" + apiKey, Object.class);
     }
 
-    public Object getTypeaheadSearch(String keywords) {
+    public List<SymbolSearchItemDTO> getTypeaheadSearch(String keywords) {
         RestTemplate restTemplate = new RestTemplate();
-        return restTemplate.getForObject(baseUrl + "/query?function=SYMBOL_SEARCH&keywords=" + keywords + "&apikey=" + apiKey, Object.class);
+        ResponseEntity<SymbolSearchWrapper> resp = restTemplate.getForEntity(baseUrl + "/query?function=SYMBOL_SEARCH&keywords=" + keywords + "&apikey=" + apiKey, SymbolSearchWrapper.class);
+        List<SymbolSearchItem> items = Objects.requireNonNull(resp.getBody()).getBestMatches();
+        return items.stream().map(SymbolSearchItemDTO::new).collect(Collectors.toList());
     }
 
     public Object getCompanyOverview(String symbol) {
