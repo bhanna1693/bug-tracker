@@ -1,7 +1,13 @@
 package com.bhanna.bugtracker.stonks.services;
 
+import com.bhanna.bugtracker.stonks.models.GlobalQuote;
+import com.bhanna.bugtracker.stonks.models.GlobalQuoteDTO;
+import com.bhanna.bugtracker.stonks.models.GlobalQuoteWrapper;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.Objects;
 
 @Service
 public class AlphaVantageService {
@@ -23,9 +29,11 @@ public class AlphaVantageService {
         return restTemplate.getForObject(baseUrl + "/query?function=OVERVIEW&symbol=" + symbol + "&apikey=" + apiKey, Object.class);
     }
 
-    public Object getGlobalQuote(String symbol) {
+    public GlobalQuoteDTO getGlobalQuote(String symbol) {
         RestTemplate restTemplate = new RestTemplate();
-        return restTemplate.getForObject(baseUrl + "/query?function=GLOBAL_QUOTE&symbol=" + symbol + "&apikey=" + apiKey, Object.class);
+        ResponseEntity<GlobalQuoteWrapper> resp = restTemplate.getForEntity(baseUrl + "/query?function=GLOBAL_QUOTE&symbol=" + symbol + "&apikey=" + apiKey, GlobalQuoteWrapper.class);
+        GlobalQuote quote = Objects.requireNonNull(resp.getBody()).getGlobalQuote();
+        return new GlobalQuoteDTO(quote);
     }
 
 }

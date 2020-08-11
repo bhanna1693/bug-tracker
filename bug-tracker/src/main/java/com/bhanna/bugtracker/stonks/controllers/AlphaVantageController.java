@@ -1,5 +1,7 @@
 package com.bhanna.bugtracker.stonks.controllers;
 
+import com.bhanna.bugtracker.stonks.models.GlobalQuote;
+import com.bhanna.bugtracker.stonks.models.GlobalQuoteDTO;
 import com.bhanna.bugtracker.stonks.services.AlphaVantageService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,7 +33,7 @@ public class AlphaVantageController {
     }
 
     @GetMapping("/stonks/global-quote")
-    public Object getGlobalQuote(@RequestParam String symbol) {
+    public GlobalQuoteDTO getGlobalQuote(@RequestParam String symbol) {
         return alphaVantageService.getGlobalQuote(symbol);
     }
 
