@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
-import {SymbolSearch} from "../models/stonks/symbol-search";
 import {CompanyOverview} from "../models/stonks/company-overview";
 import {GlobalQuote} from "../models/stonks/global-quote";
+import {SymbolSearchItemDTO} from "../models/stonks/symbol-search";
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +18,7 @@ export class StonksControllerService {
   }
 
   getStockTypeahead(keywords: string) {
-    return this.http.get<SymbolSearch>(environment.API_BASE_URL + '/stonks/typeahead', {
+    return this.http.get<SymbolSearchItemDTO[]>(environment.API_BASE_URL + '/stonks/typeahead', {
       params: {keywords}
     });
   }

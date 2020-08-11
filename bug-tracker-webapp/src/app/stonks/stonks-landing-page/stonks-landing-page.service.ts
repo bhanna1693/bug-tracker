@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {FormControl} from "@angular/forms";
 import {concat, Observable, of} from "rxjs";
-import {SymbolSearchItem} from "../../models/stonks/symbol-search";
-import {debounceTime, distinctUntilChanged, filter, finalize, map, switchMap} from "rxjs/operators";
+import {SymbolSearchItemDTO} from "../../models/stonks/symbol-search";
+import {debounceTime, distinctUntilChanged, filter, finalize, switchMap} from "rxjs/operators";
 import {StonksControllerService} from "../../api/stonks-controller.service";
 
 @Injectable({
@@ -11,7 +11,7 @@ import {StonksControllerService} from "../../api/stonks-controller.service";
 export class StonksLandingPageService {
   typeAheadControl = new FormControl(null);
   typeAheadPending = false;
-  filteredOption$: Observable<SymbolSearchItem[]>;
+  filteredOption$: Observable<SymbolSearchItemDTO[]>;
 
 
   constructor(private stonksControllerService: StonksControllerService) {
@@ -29,10 +29,7 @@ export class StonksLandingPageService {
           switchMap((keywords) => {
             this.typeAheadPending = true;
             return this.stonksControllerService.getStockTypeahead(keywords)
-              .pipe(
-                map(resp => resp.bestMatches),
-                finalize(() => this.typeAheadPending = false)
-              )
+              .pipe(finalize(() => this.typeAheadPending = false))
           })
         )
     )
