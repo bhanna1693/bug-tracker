@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {SymbolSearchItem} from "../../../models/stonks/symbol-search";
+import {SymbolSearchItemDTO} from "../../../models/stonks/symbol-search";
 import {Router} from "@angular/router";
 import {MatAutocompleteSelectedEvent} from "@angular/material/autocomplete";
 import {StonksLandingPageService} from "../stonks-landing-page.service";
@@ -31,13 +31,13 @@ export class StonksSearchComponent implements OnInit {
   }
 
   onOptionSelected(e: MatAutocompleteSelectedEvent) {
-    const item = e.option.value as SymbolSearchItem;
-    const symbol = item["1. symbol"];
+    const item = e.option.value as SymbolSearchItemDTO;
+    const symbol = item.symbol;
     this.router.navigate(['stonks', symbol]);
   }
 
-  displayFn(stock: SymbolSearchItem) {
-    return stock ? stock["2. name"] : null;
+  displayFn(stock: SymbolSearchItemDTO) {
+    return stock ? stock.name : null;
   }
 
 }

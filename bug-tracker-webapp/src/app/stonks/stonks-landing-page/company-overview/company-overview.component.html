@@ -1,6 +1,8 @@
 <ng-template #error>
   <div *ngIf="errorFetchingCompanyData$ | async" class="alert alert-danger">
     Error fetching company data. Please try again later.
+    Thank you for using Alpha Vantage! Our standard API call frequency is 5 calls per minute and 500 calls per day.
+    Please visit https://www.alphavantage.co/premium/ if you would like to target a higher API call frequency.
   </div>
 </ng-template>
 
@@ -10,16 +12,59 @@
     <p>{{data.overview.Exchange}} - Currency in {{data.overview.Currency}}</p>
   </header>
 
-  <section class="quote-info d-flex">
-    <span>{{data.globalQuote.price | currency}}</span>
-    <span>{{data.globalQuote.change | currency}} {{data.globalQuote.changePercent}}</span>
+  <section class="quote-info">
+    <h1>
+      <span>{{data.globalQuote.price | currency}}</span>
+      <span style="font-size: smaller"
+            [ngClass]="data.globalQuote.change.includes('-') ? 'text-danger' : 'text-success'">
+        {{data.globalQuote.change | currency}} ({{data.globalQuote.changePercent}})
+      </span>
+    </h1>
+
   </section>
 
   <table>
     <tbody>
     <tr>
+      <td>Previous Close</td>
+      <td>{{data.globalQuote.previousClose}}</td>
+    </tr>
+    <tr>
+      <td>Open</td>
+      <td>{{data.globalQuote.open}}</td>
+    </tr>
+    <tr>
+      <td>Bid</td>
+      <td>????</td>
+    </tr>
+    <tr>
+      <td>Ask</td>
+      <td>????</td>
+    </tr>
+    <tr>
+      <td>Day's Range</td>
+      <td>{{data.globalQuote.low | number:'1.2-2'}} - {{data.globalQuote.high | number:'1.2-2'}}</td>
+    </tr>
+    <tr>
+      <td>52 Week Range</td>
+      <td>{{data.overview["52WeekLow"] | number:'1.2-2'}} - {{data.overview["52WeekHigh"] | number:'1.2-2'}}</td>
+    </tr>
+    <tr>
+      <td>Volume</td>
+      <td>{{data.globalQuote.volume | number}}</td>
+    </tr>
+    <tr>
+      <td>Avg. Volume</td>
+      <td>????</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <tbody>
+    <tr>
       <td>Market Cap</td>
-      <td>{{data.overview.MarketCapitalization}}</td>
+      <td>{{data.overview.MarketCapitalization | number}}</td>
     </tr>
 
     <tr>
@@ -44,7 +89,7 @@
 
     <tr>
       <td>Ex-Dividend Date</td>
-      <td>{{data.overview.ExDividendDate}}</td>
+      <td>{{data.overview.ExDividendDate | date}}</td>
     </tr>
 
     <tr>

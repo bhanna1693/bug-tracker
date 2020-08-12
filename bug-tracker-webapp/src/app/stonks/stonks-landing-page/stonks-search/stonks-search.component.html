@@ -13,7 +13,7 @@
       Please enter 3 or more characters
     </mat-option>
     <mat-option *ngFor="let option of filteredOption$ | async" [value]="option">
-      {{option["2. name"]}} ({{option["1. symbol"]}})
+      {{option.name}} ({{option.symbol}})
     </mat-option>
   </mat-autocomplete>
 </mat-form-field>
