@@ -7,6 +7,7 @@ import {NavService} from "../nav.service";
   styleUrls: ['./top-nav.component.css']
 })
 export class TopNavComponent implements OnInit {
+  isCollapsed: boolean = true;
 
   constructor(public navService: NavService) { }
 

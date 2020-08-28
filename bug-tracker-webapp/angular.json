@@ -26,7 +26,6 @@
             ],
             "styles": [
               "src/assets/scss/_mat-core.scss",
-              "src/assets/scss/themes/default-theme/default-theme.scss",
               {
                 "input": "src/assets/scss/themes/default-theme/default-theme.scss",
                 "bundleName": "default-theme",

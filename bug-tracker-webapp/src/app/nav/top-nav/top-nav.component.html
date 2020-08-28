@@ -1,15 +1,19 @@
-<mat-toolbar color="primary">
-  <button mat-button *ngIf="!(navService.isLargeScreen$ | async)" (click)="navService.toggleSideNav()">
-    <mat-icon>menu</mat-icon>
-  </button>
+<nav class="d-flex p-3 bg-primary" style="max-height: 64px">
+  <!--  <button class="" *ngIf="!(navService.isLargeScreen$ | async)" (click)="navService.toggleSideNav()">-->
+  <!--    <mat-icon>menu</mat-icon>-->
+  <!--  </button>-->
 
-  <h3 routerLink="/" class="clicker">Bug Tracker Application</h3>
+  <a class="navbar-brand" routerLink="/">
+    <span>Bug Tracker Application</span>
+  </a>
 
-  <button mat-button routerLink="/task/today" routerLinkActive="active">Tasks</button>
-  <button mat-button routerLink="/stonks" routerLinkActive="active">Stonks</button>
+
+  <span class="ml-auto"></span>
+  <a class="btn" routerLink="/task/today" routerLinkActive="active">Tasks</a>
+  <a class="btn" routerLink="/stonks" routerLinkActive="active">Stonks</a>
 
   <app-theme></app-theme>
 
-<!--  <button mat-button routerLink="/login" routerLinkActive="active">Login</button>-->
-<!--  <button mat-button (click)="logout()">Logout</button>-->
-</mat-toolbar>
+  <!--  <button mat-button routerLink="/login" routerLinkActive="active">Login</button>-->
+  <!--  <button mat-button (click)="logout()">Logout</button>-->
+</nav>
