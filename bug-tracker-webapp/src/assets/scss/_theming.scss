@@ -1,0 +1,6 @@
+
+@mixin theming($theme) {
+
+  @include angular-material-theme($theme);
+
+}
