@@ -19,13 +19,29 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
+            "extractCss": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/assets/scss/custom-theme.scss",
-              "src/assets/scss/bootstrap.scss",
+              "src/assets/scss/_mat-core.scss",
+              "src/assets/scss/themes/default-theme/default-theme.scss",
+              {
+                "input": "src/assets/scss/themes/default-theme/default-theme.scss",
+                "bundleName": "default-theme",
+                "inject": true
+              },
+              {
+                "input": "src/assets/scss/themes/dark-theme/dark-theme.scss",
+                "bundleName": "dark-theme",
+                "inject": false
+              },
+              {
+                "input": "src/assets/scss/themes/secondary-theme/secondary-theme.scss",
+                "bundleName": "secondary-theme",
+                "inject": false
+              },
               "src/styles.css"
             ],
             "scripts": []

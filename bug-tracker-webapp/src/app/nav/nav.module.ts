@@ -7,6 +7,7 @@ import {MatButtonModule} from "@angular/material/button";
 import { SideNavComponent } from './side-nav/side-nav.component';
 import {MatListModule} from "@angular/material/list";
 import {MatIconModule} from "@angular/material/icon";
+import {ThemeModule} from "../theme/theme.module";
 
 
 @NgModule({
@@ -15,14 +16,15 @@ import {MatIconModule} from "@angular/material/icon";
         TopNavComponent,
         SideNavComponent
     ],
-  imports: [
-    CommonModule,
-    MatToolbarModule,
-    RouterModule,
-    MatButtonModule,
-    MatListModule,
-    MatIconModule
-  ]
+    imports: [
+        CommonModule,
+        MatToolbarModule,
+        RouterModule,
+        MatButtonModule,
+        MatListModule,
+        MatIconModule,
+        ThemeModule
+    ]
 })
 export class NavModule {
 }

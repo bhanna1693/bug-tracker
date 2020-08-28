@@ -1,0 +1,8 @@
+<ng-container *ngIf="!environment.production">
+  <button [matMenuTriggerFor]="menu" class="">Theme</button>
+  <mat-menu #menu>
+    <button (click)="setTheme(Theme.DEFAULT_THEME)" mat-menu-item>Default Theme</button>
+    <button (click)="setTheme(Theme.SECONDARY_THEME)" mat-menu-item>Secondary Theme</button>
+    <button (click)="setTheme(Theme.DARK_THEME)" mat-menu-item>Dark Theme</button>
+  </mat-menu>
+</ng-container>
