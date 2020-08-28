@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {StonksLandingPageService} from "../stonks-landing-page.service";
-import {catchError, finalize, map, switchMap} from "rxjs/operators";
+import {catchError, finalize, map, switchMap, tap} from "rxjs/operators";
 import {forkJoin, Observable, of, Subject} from "rxjs";
 import {CompanyOverview} from "../../../models/stonks/company-overview";
 import {ActivatedRoute} from "@angular/router";
@@ -38,11 +38,12 @@ export class CompanyOverviewComponent implements OnInit {
           ])
             .pipe(
               map(([overview, globalQuote]) => {
-                console.log({overview, globalQuote})
-                return {overview, globalQuote}
+                console.log({overview, globalQuote});
+                return {overview, globalQuote};
               }),
               catchError(err => {
                 console.error('Error fetching company data', err);
+                this.errorFetchingCompanyData$.next(true);
                 return of(null);
               }),
               finalize(() => this.fetchingCompanyData = false)
