@@ -1,0 +1,19 @@
+<nav class="d-flex p-3 bg-primary" style="max-height: 64px">
+  <!--  <button class="" *ngIf="!(navService.isLargeScreen$ | async)" (click)="navService.toggleSideNav()">-->
+  <!--    <mat-icon>menu</mat-icon>-->
+  <!--  </button>-->
+
+  <a class="navbar-brand" routerLink="/">
+    <span>Bug Tracker Application</span>
+  </a>
+
+
+  <span class="ml-auto"></span>
+  <a class="btn" routerLink="/task/today" routerLinkActive="active">Tasks</a>
+  <a class="btn" routerLink="/stonks" routerLinkActive="active">Stonks</a>
+
+  <app-theme></app-theme>
+
+  <!--  <button mat-button routerLink="/login" routerLinkActive="active">Login</button>-->
+  <!--  <button mat-button (click)="logout()">Logout</button>-->
+</nav>

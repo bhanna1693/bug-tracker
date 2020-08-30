@@ -1,0 +1,751 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="288c4ea5-a344-49ed-b933-8820abe52b99" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.browserslistrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/protractor.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/src/app.e2e-spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/src/app.po.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/animations/slide-in-out-animation.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/stonks-controller.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/task-controller.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/home/home.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/home/home.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/home/home.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/home/home.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/models/crud.enum.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/models/stonks/company-overview.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/models/stonks/global-quote.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/models/stonks/symbol-search.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/models/task.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/nav/nav.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/nav/nav.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/nav/nav.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/nav/side-nav/side-nav.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/nav/side-nav/side-nav.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/nav/side-nav/side-nav.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/nav/side-nav/side-nav.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/nav/top-nav/top-nav.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/nav/top-nav/top-nav.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/nav/top-nav/top-nav.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/nav/top-nav/top-nav.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/other/loading-or-error/loading-or-error.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/other/loading-or-error/loading-or-error.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/other/loading-or-error/loading-or-error.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/stonks/stonks-landing-page/company-overview/company-overview.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/stonks/stonks-landing-page/company-overview/company-overview.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/stonks/stonks-landing-page/company-overview/company-overview.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/stonks/stonks-landing-page/company-overview/company-overview.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/stonks/stonks-landing-page/stocks-home/stocks-home.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/stonks/stonks-landing-page/stocks-home/stocks-home.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/stonks/stonks-landing-page/stocks-home/stocks-home.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/stonks/stonks-landing-page/stocks-home/stocks-home.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/stonks/stonks-landing-page/stonks-landing-page.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/stonks/stonks-landing-page/stonks-landing-page.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/stonks/stonks-landing-page/stonks-landing-page.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/stonks/stonks-landing-page/stonks-landing-page.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/stonks/stonks-landing-page/stonks-landing-page.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/stonks/stonks-landing-page/stonks-landing-page.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/stonks/stonks-landing-page/stonks-search/stonks-search.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/stonks/stonks-landing-page/stonks-search/stonks-search.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/stonks/stonks-landing-page/stonks-search/stonks-search.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/stonks/stonks-landing-page/stonks-search/stonks-search.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/stonks/stonks-landing-page/stonks-search/stonks-search.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/stonks/stonks-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/stonks/stonks.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/task/dialogs/task-dialog/task-dialog-data.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/task/dialogs/task-dialog/task-dialog.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/task/dialogs/task-dialog/task-dialog.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/task/dialogs/task-dialog/task-dialog.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/task/dialogs/task-dialog/task-dialog.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/task/services/task-form.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/task/services/task-form.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/task/services/task.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/task/services/task.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/task/task-page/add-task-quick/add-task-quick.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/task/task-page/add-task-quick/add-task-quick.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/task/task-page/add-task-quick/add-task-quick.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/task/task-page/add-task-quick/add-task-quick.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/task/task-page/task-list-item/task-list-item-menu/task-list-item-menu.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/task/task-page/task-list-item/task-list-item-menu/task-list-item-menu.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/task/task-page/task-list-item/task-list-item-menu/task-list-item-menu.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/task/task-page/task-list-item/task-list-item-menu/task-list-item-menu.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/task/task-page/task-list-item/task-list-item.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/task/task-page/task-list-item/task-list-item.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/task/task-page/task-list-item/task-list-item.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/task/task-page/task-list-item/task-list-item.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/task/task-page/task-page.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/task/task-page/task-page.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/task/task-page/task-page.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/task/task-page/task-page.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/task/task-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/task/task.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/task/task.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/theme/theme.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/theme/theme.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/theme/theme.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/theme/theme/theme.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/theme/theme/theme.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/theme/theme/theme.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/theme/theme/theme.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/mock/todo/list/today.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/_mat-core.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/_theme-base.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/bootstrap.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/themes/dark-theme/dark-theme-variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/themes/dark-theme/dark-theme.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/themes/default-theme/default-theme-variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/themes/default-theme/default-theme.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/themes/functions/bootstrap-properties.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/themes/secondary-theme/secondary-theme-variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/themes/secondary-theme/secondary-theme.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/environment.prod.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/environment.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/polyfills.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.base.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.spec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tslint.json" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1dMgFVlXSwm1pq6YbkMPHxFHG9O" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets/scss" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/scss" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/scss" />
+      <recent name="$PROJECT_DIR$/src/assets/scss/themes/default-theme" />
+      <recent name="$PROJECT_DIR$/src/assets/scss/themes" />
+      <recent name="$PROJECT_DIR$/src/assets/scss/bootstrap" />
+      <recent name="$PROJECT_DIR$/src/app/stonks/stonks-landing-page" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.Angular CLI Server">
+    <configuration name="Tests (webapp)" type="JavaScriptTestRunnerKarma">
+      <config-file value="$PROJECT_DIR$/karma.conf.js" />
+      <working-directory value="$PROJECT_DIR$" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="E2E Tests (webapp)" type="JavaScriptTestRunnerProtractor">
+      <config-file value="$PROJECT_DIR$/e2e/protractor.conf.js" />
+      <node-interpreter value="project" />
+      <protractor-options value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="288c4ea5-a344-49ed-b933-8820abe52b99" name="Default Changelist" comment="" />
+      <created>1592240272901</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1592240272901</updated>
+      <workItem from="1592240274154" duration="760000" />
+      <workItem from="1592270607679" duration="3000" />
+      <workItem from="1592271166399" duration="9321000" />
+      <workItem from="1592398444364" duration="1944000" />
+      <workItem from="1592491283524" duration="2048000" />
+      <workItem from="1593013871088" duration="4196000" />
+      <workItem from="1593118789048" duration="2832000" />
+      <workItem from="1593518001178" duration="3419000" />
+      <workItem from="1595166348900" duration="41573000" />
+      <workItem from="1596074630447" duration="293000" />
+      <workItem from="1596074961665" duration="16914000" />
+      <workItem from="1596239614347" duration="1876000" />
+      <workItem from="1596310170990" duration="9218000" />
+      <workItem from="1597103593468" duration="7586000" />
+      <workItem from="1598574309989" duration="9676000" />
+      <workItem from="1598798945211" duration="8000" />
+    </task>
+    <task id="LOCAL-00014" summary="master - todo list components added">
+      <created>1595292217492</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1595292217492</updated>
+    </task>
+    <task id="LOCAL-00015" summary="master - adding sidenav components">
+      <created>1595293485645</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1595293485645</updated>
+    </task>
+    <task id="LOCAL-00016" summary="master - sidenav list added">
+      <created>1595294183345</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1595294183345</updated>
+    </task>
+    <task id="LOCAL-00017" summary="master - removied old todo components">
+      <created>1595295917394</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1595295917394</updated>
+    </task>
+    <task id="LOCAL-00018" summary="master - successfully fetching mock data from file system (Angular)">
+      <created>1595297779347</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1595297779347</updated>
+    </task>
+    <task id="LOCAL-00019" summary="master - successfully fetching mock data from file system (Angular)">
+      <created>1595297787879</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1595297787879</updated>
+    </task>
+    <task id="LOCAL-00020" summary="master - list item lookin good!">
+      <created>1595299673212</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1595299673212</updated>
+    </task>
+    <task id="LOCAL-00021" summary="master - task toggle as completed working">
+      <created>1595380771280</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1595380771280</updated>
+    </task>
+    <task id="LOCAL-00022" summary="master - todo -&gt; task">
+      <created>1595382468502</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1595382468502</updated>
+    </task>
+    <task id="LOCAL-00023" summary="master - addTask functionality working">
+      <created>1595385867909</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1595385867909</updated>
+    </task>
+    <task id="LOCAL-00024" summary="master - delete task working">
+      <created>1595466758168</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1595466758168</updated>
+    </task>
+    <task id="LOCAL-00025" summary="master - edit task working">
+      <created>1595468943154</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1595468943154</updated>
+    </task>
+    <task id="LOCAL-00026" summary="master - dialog logic adjusted">
+      <created>1595469482308</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1595469482308</updated>
+    </task>
+    <task id="LOCAL-00027" summary="master - added &quot;PUT&quot; to CORSConfig.java allowed http types">
+      <created>1595469502535</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1595469502535</updated>
+    </task>
+    <task id="LOCAL-00028" summary="master - drag &amp; drop implemented">
+      <created>1595550073323</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1595550073323</updated>
+    </task>
+    <task id="LOCAL-00029" summary="master - notes included in dialog">
+      <created>1595550319312</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1595550319312</updated>
+    </task>
+    <task id="LOCAL-00030" summary="master - slideInOut animation added">
+      <created>1595550720045</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1595550720045</updated>
+    </task>
+    <task id="LOCAL-00031" summary="master - routing adjusted">
+      <created>1595554822072</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1595554822072</updated>
+    </task>
+    <task id="LOCAL-00032" summary="master - quick add task component created">
+      <created>1595558946155</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1595558946155</updated>
+    </task>
+    <task id="LOCAL-00033" summary="master - cc">
+      <created>1595559080219</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1595559080219</updated>
+    </task>
+    <task id="LOCAL-00034" summary="master - cc styling">
+      <created>1595560223660</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1595560223660</updated>
+    </task>
+    <task id="LOCAL-00035" summary="master - environment.prod.ts edited to allow prod build; successfully deployed angular build to AWS s3 bucket">
+      <created>1595899685558</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1595899685558</updated>
+    </task>
+    <task id="LOCAL-00036" summary="master - stonks demo working">
+      <created>1596071475540</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1596071475540</updated>
+    </task>
+    <task id="LOCAL-00037" summary="app refactoring;">
+      <created>1596073857124</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1596073857124</updated>
+    </task>
+    <task id="LOCAL-00038" summary="app refactoring2">
+      <created>1596074581987</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1596074581987</updated>
+    </task>
+    <task id="LOCAL-00039" summary="stonks module created">
+      <created>1596075926485</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1596075926485</updated>
+    </task>
+    <task id="LOCAL-00040" summary="stonks test working with new apiKey">
+      <created>1596076139656</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1596076139656</updated>
+    </task>
+    <task id="LOCAL-00041" summary="typeahead working">
+      <created>1596077702242</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1596077702242</updated>
+    </task>
+    <task id="LOCAL-00042" summary="new typeahead logic">
+      <created>1596153884802</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1596153884802</updated>
+    </task>
+    <task id="LOCAL-00043" summary="symbol-search.ts added for type completion">
+      <created>1596156199439</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1596156199439</updated>
+    </task>
+    <task id="LOCAL-00044" summary="companyOverviewData logic implemented">
+      <created>1596163328536</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1596163328536</updated>
+    </task>
+    <task id="LOCAL-00045" summary="modularized search symbol input and created company-overview.component">
+      <created>1596165437268</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1596165437268</updated>
+    </task>
+    <task id="LOCAL-00046" summary="moved things around">
+      <created>1596504704588</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1596504704588</updated>
+    </task>
+    <task id="LOCAL-00047" summary="fixed strategy for fetching company info">
+      <created>1596506659517</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1596506659517</updated>
+    </task>
+    <task id="LOCAL-00048" summary="getting ready to fetch global quote">
+      <created>1596508091681</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1596508091681</updated>
+    </task>
+    <task id="LOCAL-00049" summary="moved components around">
+      <created>1596589660549</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1596589660549</updated>
+    </task>
+    <task id="LOCAL-00050" summary="created service for state management between components">
+      <created>1596590264607</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1596590264607</updated>
+    </task>
+    <task id="LOCAL-00051" summary="successfully fetching both companyOverview and globalQuote info">
+      <created>1596592436564</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1596592436564</updated>
+    </task>
+    <task id="LOCAL-00052" summary="renamed variables">
+      <created>1596592944423</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1596592944423</updated>
+    </task>
+    <task id="LOCAL-00053" summary="added getGlobalQuote() in controller and service">
+      <created>1596592959309</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1596592959309</updated>
+    </task>
+    <task id="LOCAL-00054" summary="convert globalQuote to global quote DTO">
+      <created>1597107410354</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1597107410354</updated>
+    </task>
+    <task id="LOCAL-00055" summary="commit check">
+      <created>1598574181736</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1598574181736</updated>
+    </task>
+    <task id="LOCAL-00056" summary="update theming">
+      <created>1598574796005</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1598574796006</updated>
+    </task>
+    <task id="LOCAL-00057" summary="ng update core cli rxjs">
+      <created>1598574984408</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1598574984408</updated>
+    </task>
+    <task id="LOCAL-00058" summary="ng update cdk material">
+      <created>1598575059559</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1598575059559</updated>
+    </task>
+    <task id="LOCAL-00059" summary="theming added to project">
+      <created>1598576764225</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1598576764225</updated>
+    </task>
+    <task id="LOCAL-00060" summary="theme ready!">
+      <created>1598577546509</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1598577546509</updated>
+    </task>
+    <task id="LOCAL-00061" summary="removed mat typography">
+      <created>1598577708063</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1598577708063</updated>
+    </task>
+    <task id="LOCAL-00062" summary="nav styling">
+      <created>1598583421473</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1598583421473</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="app refactoring2" />
+    <MESSAGE value="stonks module created" />
+    <MESSAGE value="stonks test working with new apiKey" />
+    <MESSAGE value="typeahead working" />
+    <MESSAGE value="new typeahead logic" />
+    <MESSAGE value="symbol-search.ts added for type completion" />
+    <MESSAGE value="companyOverviewData logic implemented" />
+    <MESSAGE value="modularized search symbol input and created company-overview.component" />
+    <MESSAGE value="moved things around" />
+    <MESSAGE value="fixed strategy for fetching company info" />
+    <MESSAGE value="getting ready to fetch global quote" />
+    <MESSAGE value="moved components around" />
+    <MESSAGE value="created service for state management between components" />
+    <MESSAGE value="successfully fetching both companyOverview and globalQuote info" />
+    <MESSAGE value="renamed variables" />
+    <MESSAGE value="added getGlobalQuote() in controller and service" />
+    <MESSAGE value="convert globalQuote to global quote DTO" />
+    <MESSAGE value="commit check" />
+    <MESSAGE value="update theming" />
+    <MESSAGE value="ng update core cli rxjs" />
+    <MESSAGE value="ng update cdk material" />
+    <MESSAGE value="theming added to project" />
+    <MESSAGE value="theme ready!" />
+    <MESSAGE value="removed mat typography" />
+    <MESSAGE value="nav styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="nav styling" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="619" y="362" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1595550583318">
+      <screen x="0" y="23" width="1792" height="1030" />
+    </state>
+    <state x="619" y="369" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1792.1120@0.0.1792.1120" timestamp="1592273327239" />
+    <state x="619" y="362" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1792.1030@0.23.1792.1030" timestamp="1595550583318" />
+    <state x="967" y="262" key="#com.intellij.ide.util.MemberChooser" timestamp="1593032877054">
+      <screen x="0" y="23" width="1792" height="1033" />
+    </state>
+    <state x="967" y="262" key="#com.intellij.ide.util.MemberChooser/0.23.1792.1033@0.23.1792.1033" timestamp="1593032877054" />
+    <state x="1085" y="312" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1595384262071">
+      <screen x="0" y="23" width="1792" height="1030" />
+    </state>
+    <state x="1085" y="314" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1592399936171" />
+    <state x="1085" y="312" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1792.1030@0.23.1792.1030" timestamp="1595384262071" />
+    <state x="109" y="115" key="CommitChangelistDialog2" timestamp="1598583421339">
+      <screen x="0" y="23" width="1792" height="1028" />
+    </state>
+    <state x="109" y="115" key="CommitChangelistDialog2/0.23.1792.1028@0.23.1792.1028" timestamp="1598583421339" />
+    <state x="109" y="115" key="CommitChangelistDialog2/0.23.1792.1030@0.23.1792.1030" timestamp="1598574181577" />
+    <state x="699" y="115" key="CommitChangelistDialog2/0.23.1792.1031@0.23.1792.1031" timestamp="1596506659403" />
+    <state x="699" y="115" key="CommitChangelistDialog2/0.23.1792.1033@0.23.1792.1033" timestamp="1594122726774" />
+    <state x="274" y="132" key="DiffContextDialog" timestamp="1596505060760">
+      <screen x="0" y="23" width="1792" height="1030" />
+    </state>
+    <state x="274" y="132" key="DiffContextDialog/0.23.1792.1030@0.23.1792.1030" timestamp="1596505060760" />
+    <state width="902" height="304" key="GridCell.Tab.0.bottom" timestamp="1598798942206">
+      <screen x="0" y="23" width="1792" height="1030" />
+    </state>
+    <state width="869" height="315" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1592401341847" />
+    <state width="902" height="304" key="GridCell.Tab.0.bottom/0.23.1792.1028@0.23.1792.1028" timestamp="1598798793573" />
+    <state width="902" height="304" key="GridCell.Tab.0.bottom/0.23.1792.1030@0.23.1792.1030" timestamp="1598798942206" />
+    <state width="1254" height="306" key="GridCell.Tab.0.bottom/0.23.1792.1031@0.23.1792.1031" timestamp="1594123906030" />
+    <state width="1254" height="306" key="GridCell.Tab.0.bottom/0.23.1792.1033@0.23.1792.1033" timestamp="1594122640435" />
+    <state width="1771" height="281" key="GridCell.Tab.0.bottom/0.23.1792.1036@0.23.1792.1036" timestamp="1592247659549" />
+    <state width="902" height="304" key="GridCell.Tab.0.center" timestamp="1598798942206">
+      <screen x="0" y="23" width="1792" height="1030" />
+    </state>
+    <state width="869" height="315" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1592401341847" />
+    <state width="902" height="304" key="GridCell.Tab.0.center/0.23.1792.1028@0.23.1792.1028" timestamp="1598798793572" />
+    <state width="902" height="304" key="GridCell.Tab.0.center/0.23.1792.1030@0.23.1792.1030" timestamp="1598798942206" />
+    <state width="1254" height="306" key="GridCell.Tab.0.center/0.23.1792.1031@0.23.1792.1031" timestamp="1594123906029" />
+    <state width="1254" height="306" key="GridCell.Tab.0.center/0.23.1792.1033@0.23.1792.1033" timestamp="1594122640434" />
+    <state width="1771" height="281" key="GridCell.Tab.0.center/0.23.1792.1036@0.23.1792.1036" timestamp="1592247659548" />
+    <state width="902" height="304" key="GridCell.Tab.0.left" timestamp="1598798942206">
+      <screen x="0" y="23" width="1792" height="1030" />
+    </state>
+    <state width="869" height="315" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1592401341846" />
+    <state width="902" height="304" key="GridCell.Tab.0.left/0.23.1792.1028@0.23.1792.1028" timestamp="1598798793571" />
+    <state width="902" height="304" key="GridCell.Tab.0.left/0.23.1792.1030@0.23.1792.1030" timestamp="1598798942206" />
+    <state width="1254" height="306" key="GridCell.Tab.0.left/0.23.1792.1031@0.23.1792.1031" timestamp="1594123906029" />
+    <state width="1254" height="306" key="GridCell.Tab.0.left/0.23.1792.1033@0.23.1792.1033" timestamp="1594122640434" />
+    <state width="1771" height="281" key="GridCell.Tab.0.left/0.23.1792.1036@0.23.1792.1036" timestamp="1592247659547" />
+    <state width="902" height="304" key="GridCell.Tab.0.right" timestamp="1598798942206">
+      <screen x="0" y="23" width="1792" height="1030" />
+    </state>
+    <state width="869" height="315" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1592401341847" />
+    <state width="902" height="304" key="GridCell.Tab.0.right/0.23.1792.1028@0.23.1792.1028" timestamp="1598798793572" />
+    <state width="902" height="304" key="GridCell.Tab.0.right/0.23.1792.1030@0.23.1792.1030" timestamp="1598798942206" />
+    <state width="1254" height="306" key="GridCell.Tab.0.right/0.23.1792.1031@0.23.1792.1031" timestamp="1594123906030" />
+    <state width="1254" height="306" key="GridCell.Tab.0.right/0.23.1792.1033@0.23.1792.1033" timestamp="1594122640435" />
+    <state width="1771" height="281" key="GridCell.Tab.0.right/0.23.1792.1036@0.23.1792.1036" timestamp="1592247659549" />
+    <state x="613" y="264" key="RollbackChangesDialog" timestamp="1596505062278">
+      <screen x="0" y="23" width="1792" height="1030" />
+    </state>
+    <state x="613" y="264" key="RollbackChangesDialog/0.23.1792.1030@0.23.1792.1030" timestamp="1596505062278" />
+    <state x="613" y="265" key="RollbackChangesDialog/0.23.1792.1031@0.23.1792.1031" timestamp="1592347981850" />
+    <state x="613" y="265" key="RollbackChangesDialog/0.23.1792.1033@0.23.1792.1033" timestamp="1593136469172" />
+    <state x="397" y="206" key="SettingsEditor" timestamp="1596074408837">
+      <screen x="0" y="23" width="1792" height="1030" />
+    </state>
+    <state x="397" y="199" key="SettingsEditor/0.0.1792.1120@0.0.1792.1120" timestamp="1592273510001" />
+    <state x="397" y="206" key="SettingsEditor/0.23.1792.1030@0.23.1792.1030" timestamp="1596074408837" />
+    <state x="397" y="207" key="SettingsEditor/0.23.1792.1033@0.23.1792.1033" timestamp="1593013885747" />
+    <state x="270" y="480" key="VCS.ChangelistChooser" timestamp="1592272564548">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="270" y="480" key="VCS.ChangelistChooser/0.0.1792.1120@0.0.1792.1120" timestamp="1592272564548" />
+    <state x="496" y="277" key="Vcs.Push.Dialog.v2" timestamp="1598583426554">
+      <screen x="0" y="23" width="1792" height="1028" />
+    </state>
+    <state x="496" y="277" key="Vcs.Push.Dialog.v2/0.23.1792.1028@0.23.1792.1028" timestamp="1598583426554" />
+    <state x="496" y="277" key="Vcs.Push.Dialog.v2/0.23.1792.1030@0.23.1792.1030" timestamp="1598574170660" />
+    <state x="496" y="278" key="Vcs.Push.Dialog.v2/0.23.1792.1033@0.23.1792.1033" timestamp="1594122926356" />
+    <state x="1128" y="458" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1598581444626">
+      <screen x="0" y="23" width="1792" height="1028" />
+    </state>
+    <state x="1128" y="458" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1792.1028@0.23.1792.1028" timestamp="1598581444626" />
+    <state x="148" y="312" width="643" height="490" key="find.popup" timestamp="1598577667692">
+      <screen x="0" y="23" width="1792" height="1028" />
+    </state>
+    <state x="148" y="315" width="598" height="490" key="find.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1592400815911" />
+    <state x="148" y="312" width="643" height="490" key="find.popup/0.23.1792.1028@0.23.1792.1028" timestamp="1598577667692" />
+    <state x="148" y="313" width="643" height="490" key="find.popup/0.23.1792.1030@0.23.1792.1030" timestamp="1597110144534" />
+    <state x="148" y="313" width="598" height="490" key="find.popup/0.23.1792.1031@0.23.1792.1031" timestamp="1592346858635" />
+    <state x="148" y="314" width="598" height="490" key="find.popup/0.23.1792.1033@0.23.1792.1033" timestamp="1594122365950" />
+    <state width="600" height="427" key="javadoc.popup" timestamp="1598581447953">
+      <screen x="0" y="23" width="1792" height="1028" />
+    </state>
+    <state width="600" height="427" key="javadoc.popup/0.23.1792.1028@0.23.1792.1028" timestamp="1598581447953" />
+    <state width="600" height="428" key="javadoc.popup/0.23.1792.1031@0.23.1792.1031" timestamp="1592352532172" />
+    <state x="768" y="420" width="350" height="300" key="org.angular.cli.generate" timestamp="1598576186288">
+      <screen x="0" y="23" width="1792" height="1028" />
+    </state>
+    <state x="768" y="420" width="350" height="300" key="org.angular.cli.generate/0.23.1792.1028@0.23.1792.1028" timestamp="1598576186288" />
+    <state x="768" y="421" width="350" height="300" key="org.angular.cli.generate/0.23.1792.1030@0.23.1792.1030" timestamp="1596589704045" />
+    <state x="768" y="421" width="350" height="300" key="org.angular.cli.generate/0.23.1792.1031@0.23.1792.1031" timestamp="1592352185339" />
+    <state x="768" y="422" width="350" height="300" key="org.angular.cli.generate/0.23.1792.1033@0.23.1792.1033" timestamp="1593032825560" />
+    <state x="112" y="254" width="670" height="675" key="search.everywhere.popup" timestamp="1598581433622">
+      <screen x="0" y="23" width="1792" height="1028" />
+    </state>
+    <state x="112" y="251" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1592271844668" />
+    <state x="112" y="254" width="670" height="675" key="search.everywhere.popup/0.23.1792.1028@0.23.1792.1028" timestamp="1598581433622" />
+    <state x="112" y="254" width="670" height="676" key="search.everywhere.popup/0.23.1792.1030@0.23.1792.1030" timestamp="1595377380334" />
+  </component>
+</project>

@@ -1,0 +1,6 @@
+<button type="button" class="bg-transparent border-0 p-2" [matMenuTriggerFor]="menu">Theme</button>
+<mat-menu #menu>
+  <button (click)="setTheme(Theme.DEFAULT_THEME)" mat-menu-item>Default Theme</button>
+  <button (click)="setTheme(Theme.SECONDARY_THEME)" mat-menu-item>Secondary Theme</button>
+  <button (click)="setTheme(Theme.DARK_THEME)" mat-menu-item>Dark Theme</button>
+</mat-menu>

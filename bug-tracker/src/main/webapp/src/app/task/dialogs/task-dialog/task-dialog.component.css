@@ -1,0 +1,13 @@
+.close-button {
+  float: right;
+  top: -24px;
+  right: -24px;
+}
+
+mat-dialog-content {
+  min-width: 350px;
+}
+
+mat-form-field {
+  width: 100%;
+}

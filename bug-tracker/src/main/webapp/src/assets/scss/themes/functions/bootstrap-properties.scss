@@ -1,0 +1,32 @@
+@import '~@angular/material/theming';
+
+@function themeColors($theme) {
+  // retrieve variables from theme
+  // (all possible variables, use only what you really need)
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+
+
+  @return (
+    "primary": mat-color($primary, default),
+    "primary-lighter": mat-color($primary, lighter),
+    "primary-darker": mat-color($primary, darker),
+    "accent": mat-color($accent, default),
+    "accent-lighter": mat-color($accent, lighter),
+    "accent-darker": mat-color($accent, darker),
+    "danger": mat-color($warn, default)
+  )
+}
+
+@function bodyBg($theme) {
+  $background: map-get($theme, background);
+
+  @return mat-color($background, background);
+}
+
+@function bodyColor($theme) {
+  $foreground: map-get($theme, foreground);
+
+  @return mat-color($foreground, text);
+}
