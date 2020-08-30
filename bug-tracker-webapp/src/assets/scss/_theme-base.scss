@@ -1,7 +1,0 @@
-@import "~@angular/material/theming";
-
-@mixin theming($theme) {
-
-  @include angular-material-theme($theme);
-
-}
